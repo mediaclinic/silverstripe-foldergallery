@@ -1,0 +1,50 @@
+/**
+ * README - Short how to for using the Silverstripe CMS foldergallery module.
+ * 
+ * LICENSE: GNU General Public License 3.0
+ * 
+ * @platform	CMS Silverstripe 2.4.5
+ * @package		silverstripe-foldergallery
+ * @author		cwsoft (http://cwsoft.de)
+ * @version		1.0.0
+ * @copyright	cwsoft
+ * @license		http://www.gnu.org/licenses/gpl.html
+*/
+
+========================================
+PURPOSE:
+========================================
+Simple foldergallery module for Silverstripe to display images on a screen. 
+Images can be uploaded via Silverstripe media manager or via FTP. The will create thumbnails for the uploaded images.
+When clicking on the thumbnail, a Javascript colorbox opens a bigger view of the image. The image description is extracted
+from the image filename (XX-your-image-description.ext --> Your image description). XX is a number to display images in
+the order you like (e.g. 01, 02, .. 99).
+
+========================================
+INSTALLATION:
+========================================
+This module requires CMS Silverstripe in version v2.4.5 (not tested for upcoming v3).
+Ftp the module to the root folder of your Silverstripe installation and rename the folder to what ever fits your needs.
+Install the module and create the required database settings via visiting: "yourdomain.com/dev/build?flush=all".
+
+========================================
+USAGE OF THE GALLERY MODULE:
+========================================
+a) log into the Silverstripe backend and create a new page of type "cwsFolderGalleryPage" (e.g. named My Gallery)
+b) switch to Silverstripes "media & image" section. Here you should see a new folder called "cws-foldergallery"
+c) create a new subfolder inside "cws-foldergallery" which will hold all images of one specific album (e.g. cws-foldergallery/2012/)
+d) upload some images to the new created folder (either via Silverstripe media manager, or via FTP)
+e) use reload function of Silverstripe media section to update the database content (if uploaded via FTP)
+f) go to page "My Gallery" in page section and select a subfolder from the dropdown list (e.g. 2012)
+g) press save and you are done
+
+========================================
+Tip:
+========================================
+To organize your images in different albums, just add another page of type cwsFolderGalleryPage below the parent page.
+Silverstripe page tree:
+ - My Gallery (type: cwsFolderGalleryPage)
+   - Album 2011 (type: cwsFolderGalleryPage)
+   - Album 2012 (type: cwsFolderGalleryPage)
+   
+ --> this set-up will provide a list with available albums when visiting "My Gallery" page.

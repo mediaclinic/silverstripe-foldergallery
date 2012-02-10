@@ -1,0 +1,45 @@
+/**
+ * This file contains the CSS layout of the Silverstripe CMS foldergallery module.
+ * 
+ * LICENSE: GNU General Public License 3.0
+ * 
+ * @platform	CMS Silverstripe 2.4.5
+ * @package		silverstripe-foldergallery
+ * @author		cwsoft (http://cwsoft.de)
+ * @version		1.0.0
+ * @copyright	cwsoft
+ * @license		http://www.gnu.org/licenses/gpl.html
+*/
+
+div.cws-foldergallery a {
+	display: block;
+    width: 150px;
+	height: 100px;
+	background: none repeat scroll 0 0 white;
+    border: 1px solid #ccc;
+    margin: 7px 15px 7px 0;
+    padding: 5px;
+    float: left;
+}
+
+div.cws-foldergallery a img {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 150px;
+	height: 100px;
+}
+
+#cws-foldergallery-album {
+	clear: both;
+	display: block;
+	background-color: #fff;
+	padding: 0.3em;
+	border: 1px solid #ccc;
+}
+
+#cws-foldergallery-album a {
+	text-decoration: none;
+	color: green;
+}
+	
