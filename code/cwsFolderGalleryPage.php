@@ -1,15 +1,17 @@
 <?php
 /**
- * This file implements the main functionality of the Silverstripe CMS folder gallery module.
+ * A lightweight folder based gallery module for the CMS SilverStripe
+ *
+ * Implements the main functionality of the foldergallery module.
  * 
  * LICENSE: GNU General Public License 3.0
  * 
- * @platform	CMS Silverstripe 2.4.5
- * @package		silverstripe-foldergallery
- * @author		cwsoft (http://cwsoft.de)
- * @version		1.0.0
- * @copyright	cwsoft
- * @license		http://www.gnu.org/licenses/gpl.html
+ * @platform    CMS SilverStripe 2.4.x
+ * @package     cwsoft-foldergallery
+ * @author      cwsoft (http://cwsoft.de)
+ * @version     1.1.0
+ * @copyright   cwsoft
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 class cwsFolderGalleryPage extends Page {
@@ -22,13 +24,13 @@ class cwsFolderGalleryPage extends Page {
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 
-		// create folder assets/csGallery if not already exists 
-		Folder::findOrMake('cws-foldergallery');
+		// create folder assets/cwsoft-foldergallery if not already exists 
+		Folder::findOrMake('cwsoft-foldergallery');
 		
-		// add dropdown field with folders in assets/csgallery
-		$album = DataObject::get_one("Folder", "Filename = 'assets/cws-foldergallery/'");
+		// add a dropdown field with all subfolders contained in assets/cwsoft-foldergallery
+		$album = DataObject::get_one("Folder", "Filename = 'assets/cwsoft-foldergallery/'");
 		if ($album) {
-			$tree = new TreeDropdownField('AlbumFolderID', _t('cwsFolderGalleryPage.CHOOSEALBUMFOLDER','Please choose an image folder for this album (subfolder in assets/cws-foldergallery/)'), 'Folder');
+			$tree = new TreeDropdownField('AlbumFolderID', _t('cwsFolderGalleryPage.CHOOSEALBUMFOLDER','Please choose an image folder for this album (subfolder in assets/cwsoft-foldergallery/)'), 'Folder');
 			$tree->setTreeBaseID((int) $album->ID);
 			$fields->addFieldToTab("Root.Content.Main", $tree, 'Content');
 		}

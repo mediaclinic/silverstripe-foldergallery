@@ -1,22 +1,24 @@
 <?php
 /**
- * This file contains the global settings of the Silverstripe CMS foldergallery module.
+ * A lightweight folder based gallery module for the CMS SilverStripe
+ *
+ * Contains global settings for the SilverStripe CMS foldergallery module.
  * 
  * LICENSE: GNU General Public License 3.0
  * 
- * @platform	CMS Silverstripe 2.4.5
- * @package		silverstripe-foldergallery
- * @author		cwsoft (http://cwsoft.de)
- * @version		1.0.0
- * @copyright	cwsoft
- * @license		http://www.gnu.org/licenses/gpl.html
+ * @platform    CMS SilverStripe 2.4.x
+ * @package     cwsoft-foldergallery
+ * @author      cwsoft (http://cwsoft.de)
+ * @version     1.1.0
+ * @copyright   cwsoft
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-// dynamically define folder name of cws-foldergallery module
+// set the folder name of the foldergallery module
 define('CWS_FOLDERGALLERY_DIR', basename(dirname(__FILE__)));
 define('CWS_FOLDERGALLERY_IMAGE', CWS_FOLDERGALLERY_DIR . '/images/foldergallery-page');
 
-// add image decorator which allows to retrieve a description from a image filename
+// decorate image to allow extraction of image description from it's file name
 Object::add_extension('Image', 'cwsFolderGalleryImageDecorator');
 
 // increase default image quality of thumbnails
