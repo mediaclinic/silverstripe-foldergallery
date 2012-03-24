@@ -23,7 +23,7 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 - PHP ***5.2.2*** or higher (recommended last stable PHP 5.3.x version)
 
 ## Installation
-1. download the [cwsoft-foldergallery v1.1.0](https://github.com/downloads/cwsoft/silverstripe-foldergallery/cwsoft-silverstripe-foldergallery-v1.1.0.zip) package
+1. download the [cwsoft-foldergallery v1.1.0](https://github.com/downloads/cwsoft/silverstripe-foldergallery/cwsoft-foldergallery-v1.1.0.zip) package
 2. extract the download package on your local computer
 3. upload the ***cwsoft-foldergallery*** folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
