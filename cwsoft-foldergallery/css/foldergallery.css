@@ -8,12 +8,11 @@
  * @platform    CMS SilverStripe 2.4.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
- * @version     1.1.0
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-div.cws-foldergallery a {
+div.cwsoft-foldergallery a {
 	display: block;
     width: 150px;
 	height: 100px;
@@ -24,7 +23,7 @@ div.cws-foldergallery a {
     float: left;
 }
 
-div.cws-foldergallery a img {
+div.cwsoft-foldergallery a img {
 	border: 0;
 	padding: 0;
 	margin: 0;
@@ -32,7 +31,7 @@ div.cws-foldergallery a img {
 	height: 100px;
 }
 
-#cws-foldergallery-album {
+#cwsoft-foldergallery-album {
 	clear: both;
 	display: block;
 	background-color: #fff;
@@ -40,7 +39,7 @@ div.cws-foldergallery a img {
 	border: 1px solid #ccc;
 }
 
-#cws-foldergallery-album a {
+#cwsoft-foldergallery-album a {
 	text-decoration: none;
 	color: green;
 }

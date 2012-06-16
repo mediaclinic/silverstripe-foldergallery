@@ -8,7 +8,6 @@
  * @platform    CMS SilverStripe 2.4.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
- * @version     1.1.0
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */

@@ -9,15 +9,14 @@
  * @platform    CMS SilverStripe 2.4.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
- * @version     1.1.0
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class cwsFolderGalleryPage extends Page {
+class cwsoftFolderGalleryPage extends Page {
 	static $singular_name = 'Folder Gallery';
 	static $plural_name = 'Folder Galleries';
-	static $icon = CWS_FOLDERGALLERY_IMAGE;
+	static $icon = CWSOFT_FOLDERGALLERY_IMAGE;
 	
 	static $db = array('AlbumFolderID' => 'Int');
 
@@ -30,7 +29,7 @@ class cwsFolderGalleryPage extends Page {
 		// add a dropdown field with all subfolders contained in assets/cwsoft-foldergallery
 		$album = DataObject::get_one("Folder", "Filename = 'assets/cwsoft-foldergallery/'");
 		if ($album) {
-			$tree = new TreeDropdownField('AlbumFolderID', _t('cwsFolderGalleryPage.CHOOSEALBUMFOLDER','Please choose an image folder for this album (subfolder in assets/cwsoft-foldergallery/)'), 'Folder');
+			$tree = new TreeDropdownField('AlbumFolderID', _t('cwsoftFolderGalleryPage.CHOOSEALBUMFOLDER','Please choose an image folder for this album (subfolder in assets/cwsoft-foldergallery/)'), 'Folder');
 			$tree->setTreeBaseID((int) $album->ID);
 			$fields->addFieldToTab("Root.Content.Main", $tree, 'Content');
 		}
@@ -39,17 +38,17 @@ class cwsFolderGalleryPage extends Page {
 	}
 }
  
-class cwsFolderGalleryPage_Controller extends Page_Controller {
+class cwsoftFolderGalleryPage_Controller extends Page_Controller {
 	function init() {
 		parent::init();
 		
 		// include jQuery and Colorbox plugin files to head section 
 		Requirements::set_write_js_to_body(false);
-		Requirements::css(CWS_FOLDERGALLERY_DIR .'/thirdparty/colorbox/colorbox.css');
-		Requirements::css(CWS_FOLDERGALLERY_DIR . '/css/foldergallery.css');
-		Requirements::javascript(CWS_FOLDERGALLERY_DIR . '/thirdparty/jquery/jquery.min.js');
-		Requirements::javascript(CWS_FOLDERGALLERY_DIR . '/thirdparty/colorbox/jquery.colorbox-min.js');
-		Requirements::javascript(CWS_FOLDERGALLERY_DIR . '/javascript/foldergallery.js');
+		Requirements::css(CWSOFT_FOLDERGALLERY_DIR .'/thirdparty/colorbox/colorbox.css');
+		Requirements::css(CWSOFT_FOLDERGALLERY_DIR . '/css/foldergallery.css');
+		Requirements::javascript(CWSOFT_FOLDERGALLERY_DIR . '/thirdparty/jquery/jquery.min.js');
+		Requirements::javascript(CWSOFT_FOLDERGALLERY_DIR . '/thirdparty/colorbox/jquery.colorbox-min.js');
+		Requirements::javascript(CWSOFT_FOLDERGALLERY_DIR . '/javascript/foldergallery.js');
 	}
 
 	public function Album() {

@@ -9,12 +9,11 @@
  * @platform    CMS SilverStripe 2.4.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
- * @version     1.1.0
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class cwsFolderGalleryImageDecorator extends DataObjectDecorator {
+class cwsoftFolderGalleryImageDecorator extends DataObjectDecorator {
 	public function Caption() {
 		// fetches image caption from filename: "XX-your-image-description.ext" ==> "Your image description"
 		if (preg_match('#\d\d-.+\.(jpg|gif|png)#i', $this->owner->Title)) {
