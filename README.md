@@ -11,7 +11,7 @@ A lightweight folder based gallery module for the [SilverStripe CMS](http://silv
 - multilingual support included (currently: English and German)
 
 ## Download
-The stable releases of the `cwsoft-foldergallery` module for the SilverStripe CMS can be found in the [GitHub download area](https://github.com/cwsoft/silverstripe-foldergallery/downloads). It is recommended to install/update to the latest available version listed. Older versions are provided for compatibility reasons with older SilverStripe versions and may contain bugs or security issues. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-foldergallery).
+The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-foldergallery/downloads). [Previous releases](https://github.com/cwsoft/silverstripe-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-foldergallery/commits/master).
 
 ## License
 The cwsoft-foldergallery module is licensed under the [GNU General Public License (GPL) v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
