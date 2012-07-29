@@ -6,20 +6,31 @@
  * 
  * LICENSE: GNU General Public License 3.0
  * 
- * @platform    CMS SilverStripe 2.4.x
+ * @platform    CMS SilverStripe 3
  * @package     cwsoft-foldergallery
+ * @version     2.0.0
  * @author      cwsoft (http://cwsoft.de)
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-// set the folder name of the foldergallery module
-define('CWSOFT_FOLDERGALLERY_VERSION', '1.2.0');
-define('CWSOFT_FOLDERGALLERY_DIR', basename(dirname(__FILE__)));
-define('CWSOFT_FOLDERGALLERY_IMAGE', CWSOFT_FOLDERGALLERY_DIR . '/images/foldergallery-page');
+// ensure module is stored in folder "cwsoft-foldergallery"
+$moduleName = 'cwsoft-foldergallery';
+$folderName = basename(dirname(__FILE__));
 
-// decorate image to allow extraction of image description from it's file name
-Object::add_extension('Image', 'cwsoftFolderGalleryImageDecorator');
+if ($folderName != $moduleName) {
+    user_error(
+        _t(
+			'_config.WRONG_MODULE_FOLDER', 
+			'Please rename the folder "{folderName}" into "{moduleName}" to get the {moduleName} module working properly.',
+			array('moduleName' => $moduleName, 'folderName' => $folderName)
+		),
+        E_USER_ERROR
+    );
+}
+
+// extend image object to allow extraction of image description from it's file name
+Object::add_extension('Image', 'cwsFolderGalleryImageExtension');
 
 // increase default image quality of thumbnails
 GD::set_default_quality(95);

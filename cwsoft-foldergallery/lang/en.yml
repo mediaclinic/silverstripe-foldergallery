@@ -1,0 +1,14 @@
+en:
+  _config:
+    WRONG_MODULE_FOLDER: 'Please rename the folder "{folderName}" into "{moduleName}" to get the {moduleName} module working properly.'
+
+  cwsFolderGalleryPage:
+    SINGULARNAME: Foldergallery
+    PLURALNAME: Foldergalleries
+    CHOOSEALBUMFOLDER: 'Choose album folder (subfolder assets/cwsoft-foldergallery/)'
+
+  cwsFolderGalleryPage.ss:
+    AVAILABLECATEGORIES: 'Available Categories'
+    NOTE: 'Hinweis'
+    ALBUMHASNOIMAGES: 'This album has no images assigned yet (try synchronizing the assets folder)'
+    BACKTOALBUMOVERVIEW: 'Back to album overview'

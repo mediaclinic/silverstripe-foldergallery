@@ -1,17 +1,20 @@
-# Foldergallery module for CMS SilverStripe (2.4.x)
-A lightweight folder based gallery module for the [SilverStripe CMS](http://silverstripe.org).
+# Foldergallery module for CMS SilverStripe 3
+The `cwsoft-foldergallery` module is a light weight folder based gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables to setup small to medium image galleries with ease.
 
 ## Features
-- easy upload of images via Ftp or the SilverStripe backend (Files & Images)
-- thumbnails of uploaded images are created on the fly
-- larger image scale appears on mouse click using a jQuery Colorbox effect
-- image description is fetched from the image file name
-- support for multiple albums included
-- appearance of the thumbnails can be customized via template and CSS files
-- multilingual support included (currently: English and German)
+- easy upload of images via Ftp or the SilverStripe files & media centre
+- optional image sorting supported via prefixing image filenames with numbers (e.g. "001-first-image-description.jpg")
+- image description automatically created from the image filenames (e.g. "First image description")
+- automatic thumbnail creation of uploaded images
+- enlarged image views are rendered via a jQuery Colorbox effect
+- multiple albums support included (organized via subfolders)
+- image gallery appearance fully customizable by templates files and CSS
+- multilingual support included (actual: English and German language files included)
 
 ## Download
 The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-foldergallery/downloads). [Previous releases](https://github.com/cwsoft/silverstripe-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-foldergallery/commits/master).
+
+Note: An older, but unsupported version for SilverStripe 2.4.x can be found and downloaded in the [2.4.x branch](https://github.com/cwsoft/silverstripe-foldergallery/tree/2.4.x) at GitHub.
 
 ## License
 The cwsoft-foldergallery module is licensed under the [GNU General Public License (GPL) v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
@@ -19,8 +22,8 @@ The cwsoft-foldergallery module is licensed under the [GNU General Public Licens
 ## Requirements
 The minimum requirements to get the cwsoft-foldergallery module running on your SilverStripe installation are as follows:
 
-- SilverStripe ***2.4.5*** or higher (recommended last stable 2.4.x version)
-- PHP ***5.2.2*** or higher (recommended last stable PHP 5.3.x version)
+- SilverStripe ***3.0.x*** or higher (recommended last stable 3.x version)
+- PHP ***5.3*** or higher (recommended last stable PHP 5.3.x version)
 
 ## Installation
 1. download latest archive from GitHub [download area](https://github.com/cwsoft/silverstripe-foldergallery/downloads)
@@ -31,11 +34,11 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 ## Usage
 The required steps to create a single album page with the ***cwsoft-foldergallery*** module are explained below.
 
-1. log into your SilverStripe backend and create a new page of type ***Folder Gallery*** (this creates a subfolder *assets/cwsoft-foldergallery* if not already exists)
-2. now create a album subfolder inside *assets/cwsoft-foldergallery* (via Ftp or SilverStripe "Files & Images")
-3. upload images to the created album folder (via Ftp or SilverStripe "Files & Images" section)
-4. rename your images to `XX-your-image-description.ext` (XX image order 00..99)
-5. this will create nice looking image descriptions in the form: "Your image description"
+1. log into your SilverStripe backend and create a new page of type ***Foldergallery*** (this creates a subfolder *assets/cwsoft-foldergallery* if not already exists)
+2. now create a album subfolder inside *assets/cwsoft-foldergallery* (via Ftp or SilverStripe "Files section")
+3. upload images to the created album folder (via Ftp or SilverStripe "Files section")
+4. rename your images to `XXX-your-image-description.ext` (XXX optional image order 000..999)
+5. image description is fetched from the image filenames and put into human readable form: "Your image description"
 6. switch to the gallery page created in step 1
 7. choose a subfolder for your album from the dropdown list
 8. add a album header and some description via the WYSIWYG field
@@ -47,17 +50,14 @@ The ***cwsoft-foldergallery*** supports multiple albums. An album is basically a
 To use the multiple albums features, create a page tree structure as follows:
 
 	SilverStripe page tree:
-	- Gallery (type: Folder Gallery)
-	  + Album 2011 (type: Folder Gallery)
-	  + Album 2012 (type: Folder Gallery)
+	- Gallery (type: Foldergallery)
+	  + Album 2011 (type: Foldergallery)
+	  + Album 2012 (type: Foldergallery)
 
-Screenshots of the frontend and backend view for a single cwsoft-foldergallery album page are shown below:
+A collage of the frontend view of cwsoft-foldergallery is shown below:
 
-***Frontend view:***
-![](https://github.com/cwsoft/silverstripe-foldergallery/raw/master/.screenshots/cwsoft-foldergallery-frontend.png) 
-
-***Backend view:***
-![](https://github.com/cwsoft/silverstripe-foldergallery/raw/master/.screenshots/cwsoft-foldergallery-backend.png) 
+***Collage (album overview / album page / Colorbox effect):***
+![](https://github.com/cwsoft/silverstripe-foldergallery/raw/master/.screenshots/cwsoft-foldergallery.png) 
 
 ## Known Issues
 Known issues can be tracked and reported via GitHubs [issue tracking service](https://github.com/cwsoft/silverstripe-foldergallery/issues). If you run into any issues with the cwsoft-foldergallery module, visit the issue tracker and check if a similar issue was already reported. If not, just add a new topic descriping your issue.

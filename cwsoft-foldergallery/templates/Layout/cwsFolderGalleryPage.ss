@@ -1,27 +1,30 @@
-﻿<div id="content" class="typography">
-$Content
+﻿<div class="content-container typography">	
+	<article>
+		<h1>$Title</h1>
+		<div class="content">
+			$Content
 
 <% if AllChildren %>
 	<b><% _t('AVAILABLECATEGORIES','Available Categories') %>:</b>
 	
 	<ul>
-	<% control AllChildren %>
-		<% if ClassName == "cwsoftFolderGalleryPage" %>
+	<% loop AllChildren %>
+		<% if ClassName == "cwsFolderGalleryPage" %>
 			<li><a href="$Link" title="$Title">$MenuTitle</a>: $Title</li>
 		<% end_if %>
-	<% end_control %>
+	<% end_loop %>
 	</ul>
 
 <% else %>
 	<% if AlbumImages %>
 		<div class="cwsoft-foldergallery">
-		<% control AlbumImages %>
+		<% loop AlbumImages %>
 			<% if getOrientation == 2 %>
 				<a href="$URL" rel="album" title="$Caption">$SetRatioSize(150,150)</a>
 			<% else %>
 				<a href="$URL" rel="album" title="$Caption">$CroppedImage(150,150)</a>
 			<% end_if %>
-		<% end_control %>
+		<% end_loop %>
 		</div>
 
 	<% else %>
@@ -39,4 +42,10 @@ $Content
 		<a href="$Parent.Link" title="$Parent.MenuTitle" >&raquo; <% _t('BACKTOALBUMOVERVIEW','Back to album overview') %></a>
 	</div>
 <% end_if %>
+
+		</div>
+	</article>
+	$Form
+	$PageComments
 </div>
+<% include SideBar %>
