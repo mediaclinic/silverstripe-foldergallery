@@ -4,22 +4,22 @@
 		<div class="content">
 			$Content
 
-<% if AllChildren %>
-	<b><% _t('AVAILABLECATEGORIES','Available Categories') %>:</b>
+<% if $AllChildren %>
+	<b><% _t('AVAILABLECATEGORIES', 'Available Categories') %>:</b>
 	
 	<ul>
-	<% loop AllChildren %>
-		<% if ClassName == "cwsFolderGalleryPage" %>
+	<% loop $AllChildren %>
+		<% if $ClassName == "cwsFolderGalleryPage" %>
 			<li><a href="$Link" title="$Title">$MenuTitle</a>: $Title</li>
 		<% end_if %>
 	<% end_loop %>
 	</ul>
 
 <% else %>
-	<% if AlbumImages %>
+	<% if $AlbumImages %>
 		<div class="cwsoft-foldergallery">
-		<% loop AlbumImages %>
-			<% if getOrientation == 2 %>
+		<% loop $AlbumImages %>
+			<% if $Orientation == "2" %>
 				<a href="$URL" rel="album" title="$Caption">$SetRatioSize(150,150)</a>
 			<% else %>
 				<a href="$URL" rel="album" title="$Caption">$CroppedImage(150,150)</a>
@@ -29,15 +29,15 @@
 
 	<% else %>
 		<blockquote>
-			<b><% _t('NOTE','Note') %>:</b>
-			<% _t('ALBUMHASNOIMAGES','This album has no images assigned yet (try synchronizing the assets folder)') %>
+			<b><% _t('NOTE', 'Note') %>:</b>
+			<% _t('ALBUMHASNOIMAGES', 'This album has no images assigned yet (try synchronizing the assets folder)') %>
 		</blockquote>
 
 	<% end_if %>
 
 <% end_if %>
 	
-<% if Parent %>
+<% if $Parent %>
 	<div id="cwsoft-foldergallery-album">
 		<a href="$Parent.Link" title="$Parent.MenuTitle" >&raquo; <% _t('BACKTOALBUMOVERVIEW','Back to album overview') %></a>
 	</div>

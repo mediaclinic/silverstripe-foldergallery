@@ -17,30 +17,30 @@ class cwsFolderGalleryPage extends Page {
 	static $singular_name = 'Foldergallery';
 	static $plural_name = 'Foldergalleries';
 	static $icon = 'cwsoft-foldergallery/images/foldergallery-page-icon.gif';
-	
 	static $db = array('AlbumFolderID' => 'Int');
 
 	function getCMSFields() {
+		// get default CMS fields
+		$fields = parent::getCMSFields();
+
 		// create folder assets/cwsoft-foldergallery if not already exists
 		Folder::find_or_make('cwsoft-foldergallery');
 
-		$fields = parent::getCMSFields();
-
-		// add dropdown field with subfolders in assets/cwsoft-foldergallery above content field
+		// get "cwsoft-foldergallery" folder object
 		$album = Folder::get()->filter('Filename', 'assets/cwsoft-foldergallery/')->First();
+		if (! $album) return $fields;
 
-		if ($album) {
-			$tree = new TreeDropdownField(
-				'AlbumFolderID', 
-				_t(
-					'cwsFolderGalleryPage.CHOOSEALBUMFOLDER',
-					'Choose album folder (subfolder assets/cwsoft-foldergallery/)'
-				),
-				'Folder'
-			);
-			$tree->setTreeBaseID((int) $album->ID);
-			$fields->addFieldToTab("Root.Main", $tree, 'Content');
-		}
+		// add dropdown field with album folders (subfolders of assets/cwsoft-foldergallery)
+		$tree = new TreeDropdownField(
+			'AlbumFolderID', 
+			_t(
+				'cwsFolderGalleryPage.CHOOSEALBUMFOLDER',
+				'Choose album folder (subfolder assets/cwsoft-foldergallery/)'
+			),
+			'Folder'
+		);
+		$tree->setTreeBaseID((int) $album->ID);
+		$fields->addFieldToTab("Root.Main", $tree, 'Content');
 		
 		return $fields;
 	}
@@ -50,8 +50,10 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	function init() {
 		parent::init();
 		
-		// include jQuery and Colorbox plugin files to head section 
+		// load cwsoft-foldergallery Javascript files into head
 		Requirements::set_write_js_to_body(false);
+		
+		// include required cwsoft-foldergallery CSS and Javascript files
 		Requirements::css('cwsoft-foldergallery/thirdparty/colorbox/colorbox.css');
 		Requirements::css('cwsoft-foldergallery/css/cwsFolderGallery.css');
 		Requirements::javascript('cwsoft-foldergallery/thirdparty/jquery/jquery.min.js');
@@ -59,15 +61,15 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		Requirements::javascript('cwsoft-foldergallery/javascript/cwsFolderGallery.js');
 	}
 
-	public function Album() {
-		// return album object for the user defined subfolder
+	protected function get_actual_album() {
+		// return folder object for the actual album
 		$album = Folder::get()->filter('ID', (int) $this->AlbumFolderID)->First();
 		return $album;
 	}
 
 	public function AlbumImages() {
-		// return all image objects located in selected album folder
-		$album = $this->Album();
+		// return all image objects for the actual album
+		$album = $this->get_actual_album();
 		return ($album) ? Image::get()->filter('ParentID', $album->ID) : false;
 	}
 }
