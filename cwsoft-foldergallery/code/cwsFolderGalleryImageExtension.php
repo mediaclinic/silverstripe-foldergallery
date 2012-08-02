@@ -16,11 +16,11 @@
 class cwsFolderGalleryImageExtension extends DataExtension {
 	public function Caption() {
 		// extract image caption from image filename and make it available via $Caption
-        // Strips off optional image order numbers and image extension
-        // Example: "xxx-your-image-description.ext" ==> "Your image description"
+		// Strips off optional image order numbers and image extension
+		// Example: "xxx-your-image-description.ext" ==> "Your image description"
 		if (preg_match('#(\d*-)?(.+)\.(jpg|gif|png)#i', $this->owner->Title, $matches)) {
 			return ucfirst(str_replace('-', ' ', $matches[2]));
 		}
-		return $this->owner->Title; 
+		return $this->owner->Title;
 	}
 }
