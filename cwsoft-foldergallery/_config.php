@@ -29,7 +29,7 @@ if ($folderName != $moduleName) {
 	);
 }
 
-// extend image object to allow extraction of image description from it's file name
+// extend image object to allow extraction of image description from it's filename
 Object::add_extension('Image', 'cwsFolderGalleryImageExtension');
 
 // increase default image quality of thumbnails

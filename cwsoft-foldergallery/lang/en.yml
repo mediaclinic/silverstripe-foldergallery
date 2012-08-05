@@ -5,10 +5,12 @@ en:
   cwsFolderGalleryPage:
     SINGULARNAME: Foldergallery
     PLURALNAME: Foldergalleries
-    CHOOSEALBUMFOLDER: 'Choose album folder (subfolder assets/cwsoft-foldergallery/)'
+    CHOOSE_IMAGE_FOLDER: 'Choose image folder (subfolder assets/cwsoft-foldergallery/)'
 
   cwsFolderGalleryPage.ss:
-    AVAILABLECATEGORIES: 'Available Categories'
-    NOTE: 'Hinweis'
-    ALBUMHASNOIMAGES: 'This album has no images assigned yet (try synchronizing the assets folder)'
-    BACKTOALBUMOVERVIEW: 'Back to album overview'
+    ALBUM: 'Album'
+    ALBUM_HAS_NO_IMAGES: 'This album has no images assigned yet (try synchronizing the assets folder)'
+    AVAILABLE_ALBUMS: 'Available Albums'
+    BACK_TO_ALBUM_OVERVIEW: 'Back to album overview'
+    NOTE: 'Note'
+    NUMBER_OF_IMAGES: ' (Images: {images})'

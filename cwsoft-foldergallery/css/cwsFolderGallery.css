@@ -12,7 +12,26 @@
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-div.cwsoft-foldergallery a {
+#cwsoft-foldergallery .album-view a {
+	display: block;
+	float: left;
+	width: 160px;
+	height: 100px;
+	background: url(../images/album-background.png) repeat-y scroll 0 0 #000;
+	border: 1px solid #ccc;
+	margin: 7px 15px 7px 0;
+	padding: 5px;
+}
+
+#cwsoft-foldergallery .album-view a img {
+	border: 0;
+	padding: 0 0 0 2em;
+	margin: 0;
+	width: 135px;
+	height: 100px;
+}
+
+#cwsoft-foldergallery .image-view a {
 	display: block;
 	width: 150px;
 	height: 100px;
@@ -23,7 +42,7 @@ div.cwsoft-foldergallery a {
 	float: left;
 }
 
-div.cwsoft-foldergallery a img {
+#cwsoft-foldergallery .image-view a img {
 	border: 0;
 	padding: 0;
 	margin: 0;
@@ -31,15 +50,14 @@ div.cwsoft-foldergallery a img {
 	height: 100px;
 }
 
-#cwsoft-foldergallery-album {
+#cwsoft-foldergallery .backlink {
 	clear: both;
 	display: block;
-	background-color: #fff;
+	background-color: #eee;
 	padding: 0.3em;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 }
 
-#cwsoft-foldergallery-album a {
+#cwsoft-foldergallery .backlink a {
 	text-decoration: none;
-	color: green;
 }
