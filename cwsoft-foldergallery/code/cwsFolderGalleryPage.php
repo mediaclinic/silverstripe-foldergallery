@@ -95,7 +95,11 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 			$albumImages = Image::get()->filter('ParentID', $pageData['AlbumFolderID']);
 			
 			// add extra information to data array
-			$data[$index]['AlbumNumberImages'] = $albumImages->Count();
+			$data[$index]['AlbumNumberImages'] = _t(
+				'cwsFolderGalleryPage.NUMBER_OF_IMAGES',
+				' (Images: {images})', 
+				array('images' => $albumImages->Count())
+			);
 			$data[$index]['AlbumCoverImage'] = ($albumImages) ? $albumImages->First() : false;
 			$data[$index]['AlbumURL'] = $pages[$index]->RelativeLink();			
 			

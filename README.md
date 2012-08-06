@@ -2,9 +2,9 @@
 The `cwsoft-foldergallery` module is a light weight folder based gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables to setup small to medium image galleries with ease.
 
 ## Features
-- easy upload of images via Ftp or the SilverStripe files & media centre
-- optional image sorting supported via prefixing image filenames with numbers (e.g. "001-first-image-description.jpg")
-- image description automatically created from the image filenames (e.g. "First image description")
+- upload your images via Ftp or the SilverStripe files & media centre
+- image description build from the image filename (e.g. "001-your-description.jpg" --> "Your description")
+- sort images by optional prefixing image filenames with numbers (e.g. "001-first-image.jpg")
 - automatic thumbnail creation of uploaded images
 - enlarged image views are rendered via a jQuery Colorbox effect
 - multiple albums support included (organized via subfolders)
@@ -45,14 +45,14 @@ The required steps to create a single album page with the ***cwsoft-foldergaller
 9. save and publish the gallery page
 
 ### Using albums
-The ***cwsoft-foldergallery*** supports multiple albums. An album is basically a child page of a page of type `Folder Gallery`. The parent page will automatically create a list with the links to the individual albums available (child pages). 
+The ***cwsoft-foldergallery*** supports multiple albums. An album is basically a child page of type `Folder Gallery` added to a parent of the same type. The parent page will automatically create thumbnail images for all albums (subpages) by extracting the first album image as cover image. Clicking on a album image will open the album site (subpage) providing a view of all album images contained in it.
 
 To use the multiple albums features, create a page tree structure as follows:
 
 	SilverStripe page tree:
-	- Gallery (type: Foldergallery)
-	  + Album 2011 (type: Foldergallery)
-	  + Album 2012 (type: Foldergallery)
+	- Album overview (type: Foldergallery)
+	  + Animals (type: Foldergallery)
+	  + Buildings (type: Foldergallery)
 
 A collage of the frontend view of cwsoft-foldergallery is shown below:
 

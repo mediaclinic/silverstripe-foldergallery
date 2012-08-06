@@ -6,6 +6,7 @@ de:
     SINGULARNAME: 'Bildergalerie'
     PLURALNAME: 'Bildergalerien'
     CHOOSE_IMAGE_FOLDER: 'Wähle einen Bilderornder (Unterordner in assets/cwsoft-foldergallery/)'
+    NUMBER_OF_IMAGES: ' (Bilder: {images})'
 
   cwsFolderGalleryPage.ss:
     ALBUM: 'Album'
@@ -13,4 +14,3 @@ de:
     AVAILABLE_ALBUMS: 'Verfügbare Alben'
     BACK_TO_ALBUM_OVERVIEW: 'Zurück zur Albenübersicht'
     NOTE: 'Hinweis'
-    NUMBER_OF_IMAGES: ' (Bilder: {images})'

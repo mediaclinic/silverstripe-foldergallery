@@ -3,14 +3,14 @@
 <% if $AlbumFolders %>
 	<strong><% _t('AVAILABLE_ALBUMS', 'Available Albums') %>:</strong>
 	
-	<div class="album-view">
+	<div class="album">
 	<% loop $AlbumFolders %>
 		<% if $AlbumCoverImage.Orientation == 2 %>
-			<a href="$AlbumURL" title="<% _t('ALBUM', 'Album') %>: $Title">
+			<a href="$AlbumURL" title="<% _t('ALBUM', 'Album') %>: $Title $AlbumNumberImages">
 				$AlbumCoverImage.SetRatioSize(150,150)
 			</a>
 		<% else %>
-			<a href="$AlbumURL" title="<% _t('ALBUM', 'Album') %>: $Title">
+			<a href="$AlbumURL" title="<% _t('ALBUM', 'Album') %>: $Title $AlbumNumberImages">
 				$AlbumCoverImage.CroppedImage(150,150)
 			</a>
 		<% end_if %>
@@ -19,7 +19,7 @@
 
 <% else %>
 	<% if $AlbumImages %>
-		<div class="image-view">
+		<div class="photo">
 		<% loop $AlbumImages %>
 			<% if $Orientation == 2 %>
 				<a href="$URL" rel="album" title="$Caption">
