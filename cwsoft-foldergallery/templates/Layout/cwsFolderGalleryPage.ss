@@ -3,7 +3,7 @@
 		<h1>$Title</h1>
 		<div class="content">
 			$Content
-			<% include FoldergalleryView %>	
+			<% include Foldergallery %>	
 		</div>
 	</article>
 	$Form
