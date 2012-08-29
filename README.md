@@ -12,9 +12,9 @@ The `cwsoft-foldergallery` module is a light weight folder based gallery for the
 - multilingual support included (actual: English and German language files included)
 
 ## Download
-The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-foldergallery/downloads). [Older releases](https://github.com/cwsoft/silverstripe-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-foldergallery/commits/master).
+The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads). [Older releases](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
 
-Note: An older, but unsupported version for SilverStripe 2.4.x can be found and downloaded in the [2.4.x branch](https://github.com/cwsoft/silverstripe-foldergallery/tree/2.4.x) at GitHub.
+Note: An older, but unsupported version for SilverStripe 2.4.x can be found and downloaded in the [2.4.x branch](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/2.4.x) at GitHub.
 
 ## License
 The `cwsoft-foldergallery` module is licensed under the [GNU General Public License (GPL) v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
@@ -26,7 +26,7 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 - PHP ***5.3*** or higher (recommended last stable PHP 5.3.x version)
 
 ## Installation
-1. download latest archive from GitHub [download area](https://github.com/cwsoft/silverstripe-foldergallery/downloads)
+1. download latest archive from GitHub [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads)
 2. unpack the archive on your local computer
 3. upload the entire ***cwsoft-foldergallery*** folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
@@ -57,13 +57,13 @@ To use the multiple albums features, create a page tree structure as follows:
 A collage of the frontend view of cwsoft-foldergallery is shown below:
 
 ***Collage (album overview / album page / Colorbox effect):***
-![](https://github.com/cwsoft/silverstripe-foldergallery/raw/master/.screenshots/cwsoft-foldergallery.png) 
+![](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/raw/master/.screenshots/cwsoft-foldergallery.png) 
 
 ## Known Issues
-Known issues can be tracked and reported via GitHubs [issue tracking service](https://github.com/cwsoft/silverstripe-foldergallery/issues). If you run into any issues with the cwsoft-foldergallery module, visit the issue tracker and check if a similar issue was already reported. If not, just add a new topic descriping your issue.
+Known issues can be tracked and reported via GitHubs [issue tracking service](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/issues). If you run into any issues with the cwsoft-foldergallery module, visit the issue tracker and check if a similar issue was already reported. If not, just add a new topic descriping your issue.
 
 ## Questions
-If you have questions or issues with cwsoft-foldergallery, please visit the [SilverStripe](http://www.silverstripe.org/all-other-modules/show/19245) forum thread and ask for feedback.
+If you have questions or issues with cwsoft-foldergallery, please visit the [SilverStripe](http://www.silverstripe.org/all-other-modules/show/20738) forum thread and ask for feedback.
 
 ***Always provide the following information with your support request:***
 
