@@ -8,7 +8,7 @@
  * 
  * @platform    CMS SilverStripe 3
  * @package     cwsoft-foldergallery
- * @version     2.1.0
+ * @version     2.2.0
  * @author      cwsoft (http://cwsoft.de)
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
@@ -29,8 +29,14 @@ if ($folderName != $moduleName) {
 	);
 }
 
+// defines number of albums displayed per page (pagination limit)
+define('CWS_FOLDERGALLERY_ALBUMS_PER_PAGE', 16);
+
+// defines number of images displayed per page (pagination limit)
+define('CWS_FOLDERGALLERY_IMAGES_PER_PAGE', 12);
+
+// defines image quality of created thumbnails
+GD::set_default_quality(95);
+
 // extend image object to allow extraction of image description from it's filename
 Object::add_extension('Image', 'cwsFolderGalleryImageExtension');
-
-// increase default image quality of thumbnails
-GD::set_default_quality(95);

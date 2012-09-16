@@ -2,7 +2,13 @@
 
 <% if $AlbumFolders %>
 	<strong>
-		<%t Foldergallery.AVAILABLE_ALBUMS 'Available Albums' %>: $AlbumFolders.Count
+		<%t Foldergallery.DISPLAYED_ALBUMS 'Displayed albums' %>: 
+		
+		<% if $AlbumFolders.MoreThanOnePage %>
+			{$AlbumFolders.FirstItem}-{$AlbumFolders.LastItem} / $AlbumFolders.Count
+		<% else %>
+			$AlbumFolders.Count / $AlbumFolders.Count
+		<% end_if %>
 	</strong>
 	
 	<div class="album">
@@ -15,10 +21,18 @@
 		<% end_loop %>
 	</div>
 
+	<% include AlbumPagination %>
+	
 <% else %>
 	<% if $AlbumImages %>
 		<strong>
-			<%t Foldergallery.AVAILABLE_IMAGES 'Available Images' %>: $AlbumImages.Count
+			<%t Foldergallery.DISPLAYED_IMAGES 'Displayed images' %>:
+
+			<% if $AlbumImages.MoreThanOnePage %>
+				{$AlbumImages.FirstItem}-{$AlbumImages.LastItem} / $AlbumImages.Count
+			<% else %>
+				$AlbumImages.Count / $AlbumImages.Count
+			<% end_if %>
 		</strong>		
 		<div class="photo">
 			<% loop $AlbumImages %>
@@ -27,6 +41,9 @@
 				</a>
 			<% end_loop %>
 		</div>
+	
+		<% include ImagePagination %>
+	
 	<% else %>
 		<blockquote>
 			<strong><%t NOTE 'Note' %>:</strong>

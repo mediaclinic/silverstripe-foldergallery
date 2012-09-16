@@ -10,8 +10,8 @@ de:
   Foldergallery:
     ALBUM: 'Album'
     ALBUM_HAS_NO_IMAGES: 'Diesem Album sind noch keine Bilder zugeordnet (evtl. Medienordner synchronisieren).'
-    AVAILABLE_ALBUMS: 'Verfügbare Alben'
-    AVAILABLE_IMAGES: 'Verfügbare Bilder'
     BACK_TO_ALBUM_OVERVIEW: 'Zurück zur Albenübersicht'
+    DISPLAYED_ALBUMS: 'Angezeigte Alben'
+    DISPLAYED_IMAGES: 'Angezeigte Bilder'
     NOTE: 'Hinweis'
     NUMBER_OF_IMAGES: '(Bilder: {images})'

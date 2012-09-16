@@ -10,8 +10,8 @@ en:
   Foldergallery:
     ALBUM: 'Album'
     ALBUM_HAS_NO_IMAGES: 'This album has no images assigned yet (try synchronizing the assets folder).'
-    AVAILABLE_ALBUMS: 'Available Albums'
-    AVAILABLE_IMAGES: 'Available Images'
     BACK_TO_ALBUM_OVERVIEW: 'Back to album overview'
+    DISPLAYED_ALBUMS: 'Displayed albums'
+    DISPLAYED_IMAGES: 'Displayed images'
     NOTE: 'Note'
     NUMBER_OF_IMAGES: '(Images: {images})'

@@ -18,7 +18,7 @@ class cwsFolderGalleryPage extends Page {
 	static $db = array(
 		'AlbumFolderID' => 'Int',
 	);
-	static $icon = 'cwsoft-foldergallery/images/foldergallery-page-icon.gif';
+	static $icon = 'cwsoft-foldergallery/images/page-tree-icon.gif';
 	static $plural_name = 'Foldergalleries';
 	static $singular_name = 'Foldergallery';
 
@@ -68,15 +68,15 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		
 		// include required cwsoft-foldergallery CSS and Javascript files
 		Requirements::css('cwsoft-foldergallery/thirdparty/colorbox/colorbox.css');
-		Requirements::css('cwsoft-foldergallery/css/cwsFolderGallery.css');
+		Requirements::css('cwsoft-foldergallery/css/cwsoft-foldergallery.css');
 		Requirements::javascript('cwsoft-foldergallery/thirdparty/jquery/jquery.min.js');
 		Requirements::javascript('cwsoft-foldergallery/thirdparty/colorbox/jquery.colorbox-min.js');
-		Requirements::javascript('cwsoft-foldergallery/javascript/cwsFolderGallery.js');
+		Requirements::javascript('cwsoft-foldergallery/javascript/cwsoft-foldergallery.js');
 	}
 
 	/**
 	 * cwsFolderGalleryPage_Controller::AlbumFolders()
-	 * Returns album pages linked to actual page via $AlbumFolderID.
+	 * Returns paginated list of all album pages linked to the actual page via $AlbumFolderID.
 	 * Includes extras like album cover image, available album images and album page link.
 	 * @return Folder objects
 	 */
@@ -102,17 +102,34 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 			// add modified subpage data to ArrayList object
 			$albumData->push(new ArrayData($data[$index]));
 		}
-		return $albumData;
+		// return paginated list of album pages
+		$albumList = new PaginatedList($albumData, $this->request);
+		
+		// set page limit of displayed images to value defined in _config.php
+		if ($albumList) {
+			$albumList->setPageLength(CWS_FOLDERGALLERY_ALBUMS_PER_PAGE);
+		}
+		
+		return $albumList;
 	}
 
 	/**
 	 * cwsFolderGalleryPage_Controller::AlbumImages()
-	 * Returns all image objects of the given page/album matching $AlbumFolderID. 
+	 * Returns a paginated list of all image objects contained in page/album matching $AlbumFolderID 
 	 * @return Image objects
 	 */
 	public function AlbumImages() {
-		// fetch all images from folder of actual album
+		// get album folder matching assigned albumFolderID
 		$albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
-		return ($albumFolder) ? Image::get()->filter('ParentID', $albumFolder->First()->ID) : false;
+		
+		// create paginated list from all images contained in given folder
+		$imageList = ($albumFolder) ? new PaginatedList(Image::get()->filter('ParentID', $albumFolder->First()->ID), $this->request) : false;
+		
+		// set page limit of displayed images to value defined in _config.php
+		if ($imageList) {
+			$imageList->setPageLength(CWS_FOLDERGALLERY_IMAGES_PER_PAGE);
+		}
+		
+		return $imageList;
 	}
 }

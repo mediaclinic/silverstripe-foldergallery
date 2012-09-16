@@ -62,3 +62,15 @@
 #cwsoft-foldergallery .backlink a {
 	text-decoration: none;
 }
+
+#cwsoft-foldergallery .pagination  {
+	clear: both;
+	padding: 1.3em 0em;
+}
+
+#cwsoft-foldergallery .pagination a {
+	border: 1px solid #ddd;
+	background-color: #eee;
+	padding: 0.3em;
+	
+}
