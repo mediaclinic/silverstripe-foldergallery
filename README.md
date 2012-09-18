@@ -33,32 +33,22 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
 
 ## Usage
-The required steps to create a single album page with the ***cwsoft-foldergallery*** module are explained below.
+To setup a `cwsoft-foldergallery` page with two albums "Animals" and "Buildings", just follow the steps shown in the sketch below. The steps below assume you have already installed the module before.
 
-1. log into your SilverStripe backend and create a new page of type ***Foldergallery*** (this creates a subfolder *assets/cwsoft-foldergallery* if not already exists)
-2. now create a album subfolder inside *assets/cwsoft-foldergallery* (via Ftp or SilverStripe "Files section")
-3. upload images to the created album folder (via Ftp or SilverStripe "Files section")
-4. rename your images to `XXX-your-image-description.ext` (XXX optional image order 000..999)
-5. image description is fetched from the image filenames and put into human readable form: "Your image description"
-6. switch to the gallery page created in step 1
-7. choose a subfolder for your album from the dropdown list
-8. add a album header and some description via the WYSIWYG field
-9. save and publish the gallery page
+![](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/raw/master/.screenshots/cwsoft-foldergallery-backend.png) 
 
-### Using albums
-The ***cwsoft-foldergallery*** supports multiple albums. An album is basically a child page of type `Folder Gallery` added to a parent of the same type. The parent page will automatically create thumbnail images for all albums (subpages) by extracting the first album image as cover image. Clicking on a album image will open the album site (subpage) providing a view of all album images contained in it.
+1. Create a page of type `Foldergallery` (will serve as album overview) and save it (saving will create the folder 'assets/cwsoft-foldergallery for you)
+2. Create album folders `animals` and `buildings` inside `assets/cwsoft-foldergallery` via SilverStripe Files section and upload images to it. Images named "001-this-will-be-the-first-image.jpg" get a description as follows: "This will be the first image". The first image in an album folder will be used as album cover image.
+3. For the album overview page (container), we do not need to select an album image folder. This step is only required for the album children pages created in step 5
+4. Provide a description for the album overview page or the album pages via the WYSIWYG editor and save the page if done
+5. Now create child pages of type `Foldergallery` for the albums `Animals` and `Buildings`. Choose the album image folder from the dropdown box (3) and provide a album description via the WYSIWYG editor (4) and save the pages
 
-To use the multiple albums features, create a page tree structure as follows:
+Tip: If you do just want to show a single page with images on it, just follow steps 1 through 4, but choose an image folder in step 3. 
 
-	SilverStripe page tree:
-	- Album overview (type: Foldergallery)
-	  + Animals (type: Foldergallery)
-	  + Buildings (type: Foldergallery)
-
-A collage of the frontend view of cwsoft-foldergallery is shown below:
+A collage of the frontend view for this set-up is shown below:
 
 ***Collage (album overview / album page / Colorbox effect):***
-![](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/raw/master/.screenshots/cwsoft-foldergallery.png) 
+![](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/raw/master/.screenshots/cwsoft-foldergallery-frontend.png) 
 
 ## Known Issues
 Known issues can be tracked and reported via GitHubs [issue tracking service](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/issues). If you run into any issues with the cwsoft-foldergallery module, visit the issue tracker and check if a similar issue was already reported. If not, just add a new topic descriping your issue.
