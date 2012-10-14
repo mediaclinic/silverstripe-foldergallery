@@ -136,6 +136,15 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	}
 
 	/**
+	 * cwsFolderGalleryPage_Controller::getPreviewImageMaxSize()
+	 * Returns maximum jQuery preview image size in pixel
+	 * @return Integer
+	 */
+	public function getPreviewImageMaxSize() {
+		return (int) CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE;
+	}
+	
+	/**
 	 * cwsFolderGalleryPage_Controller::getThumbnailHeight()
 	 * Returns thumbnail height in pixel
 	 * @return Integer

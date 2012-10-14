@@ -15,14 +15,16 @@
 		<% loop $AlbumFolders %>
 			<% if $AlbumNumberSubAlbums == 0 %>
 				<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %>">
+					<% with $AlbumCoverImage %>
+						$CroppedImage($Top.ThumbnailWidth, $Top.ThumbnailHeight)
+					<% end_with %>
+				</a>
+			
 			<% else %>
 				<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %>">
 					<img src="cwsoft-foldergallery/images/subfolder.png" class="subfolder" alt="subfolders"/>
-			<% end_if %>
-					<% with $AlbumCoverImage %>
-						<% include CreateThumbnail ThumbnailWidth=$Top.getThumbnailWidth(), ThumbnailHeight=$Top.getThumbnailHeight() %>
-					<% end_with %>
 				</a>
+			<% end_if %>
 		<% end_loop %>
 	</div>
 
@@ -42,8 +44,8 @@
 		
 		<div class="photo">
 			<% loop $AlbumImages %>
-				<a href="$URL" rel="album" title="$Caption">
-					<% include CreateThumbnail ThumbnailWidth=$Top.getThumbnailWidth(), ThumbnailHeight=$Top.getThumbnailHeight() %>
+				<a href="$SetRatioSize($Top.PreviewImageMaxSize, $Top.PreviewImageMaxSize).URL" rel="album" title="$Caption">
+					$CroppedImage($Top.ThumbnailWidth, $Top.ThumbnailHeight)
 				</a>
 			<% end_loop %>
 		</div>

@@ -1,10 +1,10 @@
-<% if AlbumFolders.MoreThanOnePage %>
+<% if $AlbumFolders.MoreThanOnePage %>
 	<div class="pagination">
-		<% if AlbumFolders.NotFirstPage %>
+		<% if $AlbumFolders.NotFirstPage %>
 			<a class="prev" href="$AlbumFolders.PrevLink">Prev</a>
 		<% end_if %>
     
-		<% loop AlbumFolders.Pages %>
+		<% loop $AlbumFolders.Pages %>
 			<% if CurrentBool %>
 				$PageNum
 			<% else %>
@@ -16,8 +16,8 @@
 			<% end_if %>
 		<% end_loop %>
     
-		<% if AlbumFolders.NotLastPage %>
+		<% if $AlbumFolders.NotLastPage %>
 			<a class="next" href="$AlbumFolders.NextLink">Next</a>
 		<% end_if %>
 	</div>	
-<% end_if %>	
+<% end_if %>

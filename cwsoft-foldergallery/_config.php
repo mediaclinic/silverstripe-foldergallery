@@ -29,10 +29,13 @@ if ($folderName != $moduleName) {
 	);
 }
 
-// defines size of cropped thumbnails in pixel (album cover image and album images)
+// defines pixel size of cropped album cover and album image thumbnails
 // Note: adapt "css/cwsoft-foldergallery.css" if you change the dimensions below
 define('CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH', 150);
 define('CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT', 115);
+
+// defines max. pixel dimension of resized jQuery preview image (original image ratio kept)
+define('CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE', 640);
 
 // defines number of albums and images displayed per page (pagination limit)
 define('CWS_FOLDERGALLERY_ALBUMS_PER_PAGE', 16);
