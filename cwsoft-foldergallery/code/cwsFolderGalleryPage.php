@@ -15,9 +15,7 @@
 
 class cwsFolderGalleryPage extends Page {
 	static $allowed_children = array('cwsFolderGalleryPage');
-	static $db = array(
-		'AlbumFolderID' => 'Int',
-	);
+	static $db = array('AlbumFolderID' => 'Int');
 	static $icon = 'cwsoft-foldergallery/images/page-tree-icon.gif';
 	static $plural_name = 'Foldergalleries';
 	static $singular_name = 'Foldergallery';
@@ -37,10 +35,10 @@ class cwsFolderGalleryPage extends Page {
 		// get "cwsoft-foldergallery" folder object
 		$album = Folder::get()->filter('Filename', 'assets/cwsoft-foldergallery/')->First();
 		if (! $album) return $fields;
-
+		
 		// add dropdown field with album folders (subfolders of assets/cwsoft-foldergallery)
 		$tree = new TreeDropdownField(
-			'AlbumFolderID', 
+			'AlbumFolderID',
 			_t(
 				'cwsFolderGalleryPage.CHOOSE_IMAGE_FOLDER',
 				'Choose image folder (subfolder assets/cwsoft-foldergallery/)'
@@ -91,6 +89,10 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		// add additional information to $data array
 		$albumData = new ArrayList();
 		foreach($data as $index => $pageData) {
+			// extract possible sub albums matching $page->AlbumFolderID
+			$subAlbums = Folder::get()->filter('ParentID', $pageData['AlbumFolderID']);
+			$data[$index]['AlbumNumberSubAlbums'] = ($subAlbums) ? $subAlbums->Count() : 0;
+
 			// extract all image objects matching $page->AlbumFolderID
 			$albumImages = Image::get()->filter('ParentID', $pageData['AlbumFolderID']);
 			

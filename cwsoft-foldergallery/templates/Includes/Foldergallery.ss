@@ -13,11 +13,16 @@
 	
 	<div class="album">
 		<% loop $AlbumFolders %>
-			<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %>">
-				<% with $AlbumCoverImage %>
-					<% include CreateThumbnail %>
-				<% end_with %>
-			</a>
+			<% if $AlbumNumberSubAlbums == 0 %>
+				<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %>">
+			<% else %>
+				<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %>">
+					<img src="cwsoft-foldergallery/images/subfolder.png" class="subfolder" alt="subfolders"/>
+			<% end_if %>
+					<% with $AlbumCoverImage %>
+						<% include CreateThumbnail %>
+					<% end_with %>
+				</a>
 		<% end_loop %>
 	</div>
 

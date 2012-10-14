@@ -14,41 +14,44 @@
 
 #cwsoft-foldergallery .album a {
 	display: block;
+	overflow: hidden;
 	float: left;
-	width: 150px;
-	height: 100px;
+	width: 170px;
+	height: 115px;
 	background: #000 url(../images/album-background.png) repeat-y 0 ;
+	border: 2px solid #7b6b4a;
+	border-color: #7b6b4a #574d2a #574d2a #7b6b4a;
 	margin: 10px 15px 10px 0;
 	padding: 5px;
-	border: 0;
 	text-decoration: none;
 }
 
 #cwsoft-foldergallery .album a img {
-	border: 0;
-	padding: 0 0 0 15px;
-	margin: 0;
-	width: 135px;
-	height: 100px;
+	border: 1px solid #7b6b4a;
+	margin: 0 0 0 15px;
+}
+
+#cwsoft-foldergallery img.subfolder {
+	border: 0 !important;
+	margin: 10px 0 0 40px !important;
 }
 
 #cwsoft-foldergallery .photo a {
 	display: block;
+	overflow: hidden;
 	width: 150px;
-	height: 100px;
+	height: 115px;
 	background: none repeat scroll 0 0 white;
-	border: 1px solid #ccc;
+	border: 2px solid #ccc;
+	border-color: #ccc #999 #999 #ccc;
 	margin: 7px 15px 7px 0;
-	padding: 5px;
+	padding: 8px;
 	float: left;
 }
 
 #cwsoft-foldergallery .photo a img {
-	border: 0;
-	padding: 0;
+	border: 1px solid #999;
 	margin: 0;
-	width: 150px;
-	height: 100px;
 }
 
 #cwsoft-foldergallery .backlink {
