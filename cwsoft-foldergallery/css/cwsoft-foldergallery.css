@@ -16,9 +16,9 @@
 	display: block;
 	overflow: hidden;
 	float: left;
-	width: 170px;
-	height: 115px;
-	background: #000 url(../images/album-background.png) repeat-y 0 ;
+	width: 167px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
+	height: 117px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image */
+	background: #ae9f82 url(../images/album-background.png) repeat-y 0 ;
 	border: 2px solid #7b6b4a;
 	border-color: #7b6b4a #574d2a #574d2a #7b6b4a;
 	margin: 10px 15px 10px 0;
@@ -39,14 +39,15 @@
 #cwsoft-foldergallery .photo a {
 	display: block;
 	overflow: hidden;
-	width: 150px;
-	height: 115px;
+	float: left;
+	width: 150px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH */
+	height: 115px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT */
 	background: none repeat scroll 0 0 white;
 	border: 2px solid #ccc;
 	border-color: #ccc #999 #999 #ccc;
 	margin: 7px 15px 7px 0;
 	padding: 8px;
-	float: left;
+	text-decoration: none;
 }
 
 #cwsoft-foldergallery .photo a img {

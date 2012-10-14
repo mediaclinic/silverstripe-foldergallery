@@ -20,7 +20,7 @@
 					<img src="cwsoft-foldergallery/images/subfolder.png" class="subfolder" alt="subfolders"/>
 			<% end_if %>
 					<% with $AlbumCoverImage %>
-						<% include CreateThumbnail %>
+						<% include CreateThumbnail ThumbnailWidth=$Top.getThumbnailWidth(), ThumbnailHeight=$Top.getThumbnailHeight() %>
 					<% end_with %>
 				</a>
 		<% end_loop %>
@@ -39,10 +39,11 @@
 				$AlbumImages.Count / $AlbumImages.Count
 			<% end_if %>
 		</strong>		
+		
 		<div class="photo">
 			<% loop $AlbumImages %>
 				<a href="$URL" rel="album" title="$Caption">
-					<% include CreateThumbnail %>
+					<% include CreateThumbnail ThumbnailWidth=$Top.getThumbnailWidth(), ThumbnailHeight=$Top.getThumbnailHeight() %>
 				</a>
 			<% end_loop %>
 		</div>

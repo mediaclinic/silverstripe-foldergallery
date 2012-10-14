@@ -29,10 +29,13 @@ if ($folderName != $moduleName) {
 	);
 }
 
-// defines number of albums displayed per page (pagination limit)
-define('CWS_FOLDERGALLERY_ALBUMS_PER_PAGE', 16);
+// defines size of cropped thumbnails in pixel (album cover image and album images)
+// Note: adapt "css/cwsoft-foldergallery.css" if you change the dimensions below
+define('CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH', 150);
+define('CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT', 115);
 
-// defines number of images displayed per page (pagination limit)
+// defines number of albums and images displayed per page (pagination limit)
+define('CWS_FOLDERGALLERY_ALBUMS_PER_PAGE', 16);
 define('CWS_FOLDERGALLERY_IMAGES_PER_PAGE', 12);
 
 // defines image quality of created thumbnails

@@ -1,5 +1,2 @@
-<% if $Orientation == 2 %>
-	$SetRatioSize(150,150)
-<% else %>
-	$CroppedImage(150,150)
-<% end_if %>
+<%-- creates thumbnails (album cover image and album images) using dimensions given in _config.php --%>
+$CroppedImage($ThumbnailWidth, $ThumbnailHeight)

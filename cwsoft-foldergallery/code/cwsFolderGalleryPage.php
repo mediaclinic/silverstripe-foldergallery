@@ -58,7 +58,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Inlcudes the CSS and Javascript files required by the cwsoft-foldergallery module.
 	 * @return void
 	 */
-	function init() {
+	 function init() {
 		parent::init();
 		
 		// load cwsoft-foldergallery Javascript files into head
@@ -133,5 +133,23 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		}
 		
 		return $imageList;
+	}
+
+	/**
+	 * cwsFolderGalleryPage_Controller::getThumbnailHeight()
+	 * Returns thumbnail height in pixel
+	 * @return Integer
+	 */
+	public function getThumbnailHeight() {
+		return (int) CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT;
+	}
+	
+	/**
+	 * cwsFolderGalleryPage_Controller::getThumbnailWidth()
+	 * Returns thumbnail width in pixel
+	 * @return Integer
+	 */
+	public function getThumbnailWidth() {
+		return (int) CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH;
 	}
 }
