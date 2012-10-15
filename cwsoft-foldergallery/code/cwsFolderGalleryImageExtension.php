@@ -23,7 +23,7 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 	 * @return String with image caption
 	 */
 	public function Caption() {
-		if (preg_match('#(\d*-)?(.+)\.(jpg|gif|png)#i', $this->owner->Title, $matches)) {
+		if (preg_match('#(\d*-)?(.+)\.(jpg|jpeg|gif|png)#i', $this->owner->Title, $matches)) {
 			return ucfirst(str_replace('-', ' ', $matches[2]));
 		}
 		return $this->owner->Title;

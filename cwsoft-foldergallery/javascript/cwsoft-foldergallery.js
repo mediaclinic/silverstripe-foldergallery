@@ -28,7 +28,7 @@ $(document).ready(function(){
 			if (match != null) {
 				// add link to original image size to image title
 				var originalImageUrl = this.href.replace(match, '');
-				return this.title + '<a href="' + originalImageUrl + '" class="download-image" target="_blank">(Full size)</span></a>';
+				return this.title + '<a href="' + originalImageUrl + '" class="download-image" target="_blank">(Full size)</a>';
 			}
 			// return original title
 			return this.title;
