@@ -5,9 +5,9 @@ The `cwsoft-foldergallery` module is a light weight folder based gallery for the
 - image upload via Ftp or the SilverStripe files & media centre
 - image description built from image filenames (e.g. "001-your-description.jpg" --> "Your description")
 - image order can be defined by optional prefixing image filenames with numbers (e.g. "001-first-image.jpg")
-- automated pagination of albums and images (number of albums/images per pages configurable via "_config.php")
 - automatic thumbnail creation of uploaded images
-- enlarged image views displayed with a jQuery ColorBox effect
+- automatic image resize of preview images used in jQuery effect (full image accessable via jQuery image)
+- pagination of albums and images (number of albums/images per pages configurable via "_config.php")
 - multiple albums support included (organized via subfolders)
 - image gallery appearance customizable via template and CSS files
 - multilingual support included (actual: English and German language files included)

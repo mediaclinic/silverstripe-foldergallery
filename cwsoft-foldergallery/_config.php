@@ -8,7 +8,7 @@
  * 
  * @platform    CMS SilverStripe 3
  * @package     cwsoft-foldergallery
- * @version     2.2.0
+ * @version     2.3.0
  * @author      cwsoft (http://cwsoft.de)
  * @copyright   cwsoft
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
@@ -35,7 +35,7 @@ define('CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH', 150);
 define('CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT', 115);
 
 // defines max. pixel dimension of resized jQuery preview image (original image ratio kept)
-define('CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE', 640);
+define('CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE', 800);
 
 // defines number of albums and images displayed per page (pagination limit)
 define('CWS_FOLDERGALLERY_ALBUMS_PER_PAGE', 16);

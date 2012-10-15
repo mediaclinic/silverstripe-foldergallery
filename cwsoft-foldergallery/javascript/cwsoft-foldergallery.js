@@ -20,6 +20,18 @@ $(document).ready(function(){
 		maxHeight: '800px',
 		current: '{current}/{total}',
 		arrowKey: true,
-		escKey: true
+		escKey: true,
+		title: function(){
+			// work out URL to original image
+			var myregex = /_resampled\/SetRatioSize\d*-/i;
+			var match = myregex.exec(this.href);
+			if (match != null) {
+				// add link to original image size to image title
+				var originalImageUrl = this.href.replace(match, '');
+				return this.title + '<a href="' + originalImageUrl + '" class="download-image" target="_blank">(Full size)</span></a>';
+			}
+			// return original title
+			return this.title;
+		}
 	});
 });
