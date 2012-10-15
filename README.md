@@ -63,3 +63,10 @@ If you have questions or issues with cwsoft-foldergallery, please visit the [Sil
  - your PHP and SilverStripe version used
  - information about your operating system (e.g. Windows, Mac, Linux) incl. version
  - information of your browser and browser version used
+
+## Credits
+This sections lists people who helped in one way or another to continually improve the `cwsoft-foldergallery` module - thanks guys highly appreciated.
+
+*My special thanks to:*
+ - [haantje72](http://www.silverstripe.org/ForumMemberProfile/show/5933): Dutch language file and all the inspiration for further improvements
+ - [Kereru](http://www.silverstripe.org/ForumMemberProfile/show/26608): Bug report on thumbnail creation
