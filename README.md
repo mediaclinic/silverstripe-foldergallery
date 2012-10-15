@@ -10,7 +10,7 @@ The `cwsoft-foldergallery` module is a light weight folder based gallery for the
 - pagination of albums and images (number of albums/images per pages configurable via "_config.php")
 - multiple albums support included (organized via subfolders)
 - image gallery appearance customizable via template and CSS files
-- multilingual support included (actual: English and German language files included)
+- multilingual support (actual: English, Dutch and German language files included)
 
 ## Download
 The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads). [Older releases](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
