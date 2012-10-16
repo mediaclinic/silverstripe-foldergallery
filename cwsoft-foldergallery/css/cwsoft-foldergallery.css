@@ -79,9 +79,43 @@
 	
 }
 
-a.download-image {
+#cboxFullSizeView {
+	position: absolute;
+	bottom: 0; 
+	right: 26px;
+	background: url(../images/full-size.png) no-repeat 0 0;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+
+#cboxFullSizeView:hover {
+	background-position: -25px 0;
+}
+
+a.cboxFullSizeView {
 	display: block;
-	float: right;
-	font-size: 80%;
-	margin: 0.2em 3em 0em 0em;
+	position: absolute;
+	bottom: 0; 
+	right: 26px;
+	background: url(../images/full-size.png) no-repeat 0 0;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+	cursor: pointer;
+	text-decoration: none;
+	border: 0;
+}
+
+a.cboxFullSizeView:hover {
+	background-position: -25px 0;
+}
+
+a.cboxFullSizeView:link,
+a.cboxFullSizeView:visited ,
+a.cboxFullSizeView:focus, 
+a.cboxFullSizeView:active {
+	text-decoration: none !important;
+	border: 0 !important;
 }

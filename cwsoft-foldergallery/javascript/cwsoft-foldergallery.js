@@ -22,15 +22,21 @@ $(document).ready(function(){
 		arrowKey: true,
 		escKey: true,
 		title: function(){
-			// work out URL to original image
+			// check if displayed jQuery preview image was resized by SilverStripe
 			var myregex = /_resampled\/SetRatioSize\d*-/i;
 			var match = myregex.exec(this.href);
-			if (match != null) {
-				// add link to original image size to image title
-				var originalImageUrl = this.href.replace(match, '');
-				return this.title + '<a href="' + originalImageUrl + '" class="download-image" target="_blank">(Full size)</a>';
+			if (match == null) {
+				// jQuery shows original sized image, return image title
+				return this.title;
 			}
-			// return original title
+
+			// fetch URL to original image from resized image URL
+			var originalImageUrl = this.href.replace(match, '');
+
+			// insert link to left side of the jQuery close button to display original image in new window
+			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="Full size">Full size</a>');
+
+			// return default jQuery image titel
 			return this.title;
 		}
 	});
