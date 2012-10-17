@@ -19,8 +19,7 @@ class cwsFolderGalleryPage extends Page {
 	static $icon = 'cwsoft-foldergallery/images/page-tree-icon.gif';
 	static $plural_name = 'Foldergalleries';
 	static $singular_name = 'Foldergallery';
-	static $description = 'Folder-based gallery';
-	
+	static $description = 'Folder based gallery';
 
 	/**
 	 * cwsFolderGalleryPage::getCMSFields()

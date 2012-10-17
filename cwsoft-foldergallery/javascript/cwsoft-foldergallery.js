@@ -21,6 +21,7 @@ $(document).ready(function(){
 		current: '{current}/{total}',
 		arrowKey: true,
 		escKey: true,
+		
 		title: function(){
 			// check if displayed jQuery preview image was resized by SilverStripe
 			var myregex = /_resampled\/SetRatioSize\d*-/i;
@@ -34,7 +35,7 @@ $(document).ready(function(){
 			var originalImageUrl = this.href.replace(match, '');
 
 			// insert link to left side of the jQuery close button to display original image in new window
-			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="' + ss.i18n._t('cwsoft-foldergallery.FULLSIZE') +'">' + ss.i18n._t('cwsoft-foldergallery.FULLSIZE') + '</a>');
+			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="' + ss.i18n._t('cwsoft-foldergallery.FULL_SCALE') +'">' + ss.i18n._t('cwsoft-foldergallery.FULL_SCALE') + '</a>');
 
 			// return default jQuery image title
 			return this.title;

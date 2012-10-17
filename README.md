@@ -10,7 +10,7 @@ The `cwsoft-foldergallery` module is a light weight folder based gallery for the
 - pagination of albums and images (number of albums/images per pages configurable via "_config.php")
 - multiple albums support included (organized via subfolders)
 - image gallery appearance customizable via template and CSS files
-- multilingual support (actual: English, Dutch and German language files included)
+- multilingual support (actual: English, Dutch, French and German language files included)
 
 ## Download
 The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads). [Older releases](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
@@ -65,8 +65,9 @@ If you have questions or issues with cwsoft-foldergallery, please visit the [Sil
  - information of your browser and browser version used
 
 ## Credits
-This sections lists people who helped in one way or another to continually improve the `cwsoft-foldergallery` module - thanks guys highly appreciated.
+This sections provides a list of people (in alphabetical order of name/nick name) who helped in one way or another to continually improve the `cwsoft-foldergallery` module - thanks guys highly appreciated.
 
-*My special thanks to:*
+***My special thanks to:****
  - [haantje72](http://www.silverstripe.org/ForumMemberProfile/show/5933): Dutch language file and all the inspiration for further improvements
+ - [Juanitou](http://www.silverstripe.org/ForumMemberProfile/show/3189): For his [pull request](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commit/9273343fa07eee5e3a5b2f05760237e397010193) providing Javascript i18n support, bugfixes and French language file
  - [Kereru](http://www.silverstripe.org/ForumMemberProfile/show/26608): Bug report on thumbnail creation
