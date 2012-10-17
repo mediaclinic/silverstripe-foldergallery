@@ -14,7 +14,7 @@
 
 $(document).ready(function(){
 	$("a[rel='album']").colorbox({
-		transition: 'fade', 	// fade, ellastic, none
+		transition: 'fade', 	// fade, elastic, none
 		speed: 300, 
 		maxWidth: '800px', 
 		maxHeight: '800px',
@@ -34,9 +34,9 @@ $(document).ready(function(){
 			var originalImageUrl = this.href.replace(match, '');
 
 			// insert link to left side of the jQuery close button to display original image in new window
-			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="Full size">Full size</a>');
+			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="' + ss.i18n._t('cwsoft-foldergallery.FULLSIZE') +'">' + ss.i18n._t('cwsoft-foldergallery.FULLSIZE') + '</a>');
 
-			// return default jQuery image titel
+			// return default jQuery image title
 			return this.title;
 		}
 	});

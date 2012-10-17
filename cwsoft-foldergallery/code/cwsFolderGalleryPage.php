@@ -19,6 +19,8 @@ class cwsFolderGalleryPage extends Page {
 	static $icon = 'cwsoft-foldergallery/images/page-tree-icon.gif';
 	static $plural_name = 'Foldergalleries';
 	static $singular_name = 'Foldergallery';
+	static $description = 'Folder-based gallery';
+	
 
 	/**
 	 * cwsFolderGalleryPage::getCMSFields()
@@ -60,6 +62,12 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 */
 	 function init() {
 		parent::init();
+		
+		// include i18n Javascript library and lang files
+		// it doesn't work without the meta-tag (see http://open.silverstripe.org/ticket/7949)
+		Requirements::insertHeadTags('<meta http-equiv="Content-language" content="' . i18n::get_locale() . '" />');
+		Requirements::javascript(FRAMEWORK_DIR . "/javascript/i18n.js");
+		Requirements::add_i18n_javascript('cwsoft-foldergallery/javascript/lang');
 		
 		// load cwsoft-foldergallery Javascript files into head
 		Requirements::set_write_js_to_body(false);
@@ -125,7 +133,16 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		$albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
 		
 		// create paginated list from all images contained in given folder
-		$imageList = ($albumFolder) ? new PaginatedList(Image::get()->filter('ParentID', $albumFolder->First()->ID), $this->request) : false;
+		if ($albumFolder->exists()) {
+			$image = Image::get()->filter('ParentID', $albumFolder->First()->ID);
+			if ($image->exists()) {
+				$imageList = new PaginatedList($image, $this->request);
+			} else {
+				$imageList = false;
+			}
+		} else {
+			$imageList = false;
+		}
 		
 		// set page limit of displayed images to value defined in _config.php
 		if ($imageList) {

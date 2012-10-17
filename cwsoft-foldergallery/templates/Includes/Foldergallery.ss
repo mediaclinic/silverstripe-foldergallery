@@ -54,7 +54,7 @@
 	
 	<% else %>
 		<blockquote>
-			<strong><%t NOTE 'Note' %>:</strong>
+			<strong><%t Foldergallery.NOTE 'Note' %>:</strong>
 			<%t Foldergallery.ALBUM_HAS_NO_IMAGES 'This album has no images assigned yet (try synchronizing the assets folder).' %>
 		</blockquote>
 	<% end_if %>

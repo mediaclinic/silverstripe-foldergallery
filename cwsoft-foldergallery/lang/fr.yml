@@ -1,0 +1,19 @@
+fr:
+  _config:
+    WRONG_MODULE_FOLDER: 'Pour que le module {moduleName} fonctionne correctement, le dossier {folderName} doit être renommé en {moduleName}.'
+
+  cwsFolderGalleryPage:
+    SINGULARNAME: 'Galerie (dossier)'
+    PLURALNAME: 'Galeries (dossiers)'
+    DESCRIPTION: 'Galerie basée sur des dossiers'
+    CHOOSE_IMAGE_FOLDER: 'Dossier associé (sous-dossier assets/cwsoft-foldergallery/)'
+
+  Foldergallery:
+    ALBUM: 'Album&nbsp;'
+    ALBUM_HAS_NO_IMAGES: 'Cet album n&apos;a pas encore des images associées (essayez de synchroniser les dossiers).'
+    BACK_TO_ALBUM_OVERVIEW: 'Retourner à l&apos;aperçu des albums'
+    DISPLAYED_ALBUMS: 'Albums affichés&nbsp;'
+    DISPLAYED_IMAGES: 'Images affichées&nbsp;'
+    NOTE: 'Notes&nbsp;'
+    NUMBER_OF_IMAGES: '(Images&nbsp;: {images})'
+    NUMBER_OF_SUB_ALBUMS: '(Sous-albums&nbsp;: {subAlbums})'
