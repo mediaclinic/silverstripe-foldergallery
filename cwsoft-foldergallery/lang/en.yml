@@ -5,6 +5,7 @@ en:
   cwsFolderGalleryPage:
     SINGULARNAME: 'Foldergallery'
     PLURALNAME: 'Foldergalleries'
+    DESCRIPTION: 'Folder-based gallery'
     CHOOSE_IMAGE_FOLDER: 'Choose image folder (subfolder assets/cwsoft-foldergallery/)'
 
   Foldergallery:
