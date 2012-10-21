@@ -1,5 +1,7 @@
 <div id="cwsoft-foldergallery">
 
+<% include GalleryBreadcrumbs %>
+
 <% if $AlbumFolders %>
 	<p class="infos">
 		<%t Foldergallery.DISPLAYED_ALBUMS 'Displayed albums' %>: 
@@ -60,12 +62,6 @@
 	<% end_if %>
 <% end_if %>
 	
-<% if $Parent %>
-	<div class="backlink">
-		<a href="$Parent.Link" title="$Parent.MenuTitle" >
-			&raquo; <%t Foldergallery.BACK_TO_ALBUM_OVERVIEW 'Back to album overview' %>
-		</a>
-	</div>
-<% end_if %>
-
+<% include Backlink %>
+	
 </div>

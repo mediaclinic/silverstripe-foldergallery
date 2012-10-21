@@ -1,4 +1,5 @@
 <% if $AlbumImages.MoreThanOnePage %>
+	<br class="clear" />
 	<div class="pagination">
 		<% if $AlbumImages.NotFirstPage %>
 			<a class="prev" href="$AlbumImages.PrevLink">Prev</a>

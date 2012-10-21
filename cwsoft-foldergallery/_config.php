@@ -29,6 +29,9 @@ define('CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE', 800);
 define('CWS_FOLDERGALLERY_ALBUMS_PER_PAGE', 16);
 define('CWS_FOLDERGALLERY_IMAGES_PER_PAGE', 12);
 
+// defines if breadcrumbs are shown at the top (only if at least one parent page exists)
+define('CWS_FOLDERGALLERY_SHOW_BREADCRUMBS', true);
+
 // defines image quality of created thumbnails
 GD::set_default_quality(95);
 

@@ -17,12 +17,35 @@
 	width: auto;
 }
 
+#cwsoft-foldergallery .clear {
+	clear: both;
+}
+
+#cwsoft-foldergallery  a,
+#cwsoft-foldergallery  a:link,
+#cwsoft-foldergallery  a:visited,
+#cwsoft-foldergallery  a:hover,
+#cwsoft-foldergallery  a:active {
+	text-decoration: none;
+	border: 0;
+}
+
+/** STYLES FOR DISPLAY OF AVAILABLE ALBUMS/IMAGES AND BREADCRUMBS */
+#cwsoft-foldergallery .breadcrumbs {
+	font-size: 95%;
+	color: #999;
+	margin: 0 0 1.3em 0;
+	background-color: #eee;
+	padding: 0.3em;
+	border: 1px solid #ddd;
+}
+
 #cwsoft-foldergallery  p.infos {
 	font-weight: bold;
 	margin: 0;
 }
 
-/** STYLES FOR THE ALBUM VIEWS */
+/** STYLES FOR THE ALBUM FOLDER VIEWS */
 #cwsoft-foldergallery .album {
 	float: left;
 	width: 167px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
@@ -30,7 +53,7 @@
 	background: #ae9f82 url(../images/album-background.png) repeat-y 0 ;
 	border: 2px solid #7b6b4a;
 	border-color: #7b6b4a #574d2a #574d2a #7b6b4a;
-	margin: 10px 15px 10px 0;
+	margin: 0.8em 0.8em 0 0;
 	padding: 5px;
 }
 
@@ -48,16 +71,7 @@
 	margin: 10px 0 0 40px !important;
 }
 
-#cwsoft-foldergallery .album a,
-#cwsoft-foldergallery .album a:link,
-#cwsoft-foldergallery .album a:visited,
-#cwsoft-foldergallery .album a:hover,
-#cwsoft-foldergallery .album a:active {
-	text-decoration: none;
-	border: 0;
-}
-
-/** STYLES FOR THE PHOTO THUMBNAIL VIEW */
+/** STYLES FOR THE PHOTO THUMBNAIL VIEWS */
 #cwsoft-foldergallery .photo {
 	float: left;
 	width: 150px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH */
@@ -65,7 +79,7 @@
 	background: none repeat scroll 0 0 white;
 	border: 2px solid #ccc;
 	border-color: #ccc #999 #999 #ccc;
-	margin: 7px 15px 7px 0;
+	margin: 0.6em 0.6em 0 0;
 	padding: 8px;
 }
 
@@ -78,15 +92,6 @@
 	margin: 0;
 }
 
-#cwsoft-foldergallery .photo a,
-#cwsoft-foldergallery .photo a:link,
-#cwsoft-foldergallery .photo a:visited,
-#cwsoft-foldergallery .photo a:hover,
-#cwsoft-foldergallery .photo a:active {
-	text-decoration: none;
-	border: 0;
-}
-
 /** STYLES FOR THE FOLDERGALLERY NAVIGATION AND PAGINATION */
 #cwsoft-foldergallery .backlink {
 	clear: both;
@@ -94,6 +99,7 @@
 	background-color: #eee;
 	padding: 0.3em;
 	border: 1px solid #ddd;
+	margin: 1.5em 0 0 0;
 }
 
 #cwsoft-foldergallery .backlink a {
@@ -101,18 +107,16 @@
 }
 
 #cwsoft-foldergallery .pagination  {
-	clear: both;
-	padding: 1.3em 0em;
+	margin: 1.2em 0 0 0;
 }
 
 #cwsoft-foldergallery .pagination a {
 	border: 1px solid #ddd;
 	background-color: #eee;
 	padding: 0.3em;
-	
 }
 
-/** STYLES FOR THE ADDITIONAL ADDED jQUERY PREVIEW BUTTON FOR FULL-SCALE VIEW */
+/** STYLES FOR THE ADDITIONAL ADDED JQUERY PREVIEW BUTTON FOR FULL-SCALE VIEW */
 a.cboxFullSizeView {
 	display: block;
 	position: absolute;
@@ -131,10 +135,3 @@ a.cboxFullSizeView:hover {
 	background-position: -25px 0;
 }
 
-a.cboxFullSizeView:link,
-a.cboxFullSizeView:visited ,
-a.cboxFullSizeView:focus, 
-a.cboxFullSizeView:active {
-	text-decoration: none !important;
-	border: 0 !important;
-}

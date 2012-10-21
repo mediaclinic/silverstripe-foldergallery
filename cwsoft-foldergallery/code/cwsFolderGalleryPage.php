@@ -152,6 +152,15 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	public function getPreviewImageMaxSize() {
 		return (int) CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE;
 	}
+
+	/**
+	 * cwsFolderGalleryPage_Controller::getShowBreadcrumbgs()
+	 * Returns true if breadcrumbs should be shown otherwise false
+	 * @return Bool
+	 */
+	public function getShowBreadcrumbs() {
+		return (bool) CWS_FOLDERGALLERY_SHOW_BREADCRUMBS;
+	}
 	
 	/**
 	 * cwsFolderGalleryPage_Controller::getThumbnailHeight()
