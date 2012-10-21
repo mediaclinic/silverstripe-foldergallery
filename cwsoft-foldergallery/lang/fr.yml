@@ -17,3 +17,4 @@ fr:
     NOTE: 'Notes&nbsp;'
     NUMBER_OF_IMAGES: '(Images&nbsp;: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Sous-albums&nbsp;: {subAlbums})'
+    START_SLIDESHOW: 'start slideshow'

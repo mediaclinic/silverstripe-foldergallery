@@ -16,3 +16,4 @@ nl:
     NOTE: 'Notitie'
     NUMBER_OF_IMAGES: '(Foto&#39;s: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Subalbums: {subAlbums})'
+    START_SLIDESHOW: 'start slideshow'

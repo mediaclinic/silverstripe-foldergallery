@@ -42,6 +42,8 @@
 			<% else %>
 				$AlbumImages.Count / $AlbumImages.Count
 			<% end_if %>
+			
+			<a href="#" id="cboxStartSlideShow"><%t Foldergallery.START_SLIDESHOW 'start slideshow' %></a>
 		</p>
 		
 		<% loop $AlbumImages %>

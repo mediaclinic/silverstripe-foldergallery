@@ -13,7 +13,7 @@
 */
 
 $(document).ready(function(){
-	$("a[rel='album']").colorbox({
+	var gallery = $("a[rel='album']").colorbox({
 		transition: 'fade', 	// fade, elastic, none
 		speed: 300, 
 		maxWidth: '800px', 
@@ -23,7 +23,10 @@ $(document).ready(function(){
 		escKey: true,
 		slideshow: false,
 		slideshowSpeed: 3500,
+		slideshowStart: ss.i18n._t('cwsoft-foldergallery.START_SLIDESHOW'),
+		slideshowStop: ss.i18n._t('cwsoft-foldergallery.STOP_SLIDESHOW'),
 		
+		// add additional button to display a full-scale picture from jQuery preview
 		title: function(){
 			// check if displayed jQuery preview image was resized by SilverStripe
 			var myregex = /_resampled\/SetRatioSize\d*-/i;
@@ -44,6 +47,21 @@ $(document).ready(function(){
 			
 			// return default jQuery image title
 			return this.title;
+		},
+	
+		cbox_closed: function() {
+			gallery.colorbox({slideshow: false});
 		}
+	
 	});
+
+	// register event to start slideshow when clicking on a textlink
+	$("a#cboxStartSlideShow").on("click", function() {
+		gallery.colorbox({
+			slideshow: true
+		}).eq(0).click();
+	});
+
+	
+	
 });
