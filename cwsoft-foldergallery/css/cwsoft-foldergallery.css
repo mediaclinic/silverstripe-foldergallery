@@ -26,6 +26,10 @@
 	text-decoration: none;
 }
 
+#cwsoft-foldergallery .album a:hover {
+	border: 2px solid #610;
+}
+
 #cwsoft-foldergallery .album a img {
 	border: 1px solid #7b6b4a;
 	margin: 0 0 0 15px;
@@ -48,6 +52,10 @@
 	margin: 7px 15px 7px 0;
 	padding: 8px;
 	text-decoration: none;
+}
+
+#cwsoft-foldergallery .photo a:hover {
+	border: 2px solid #777;
 }
 
 #cwsoft-foldergallery .photo a img {

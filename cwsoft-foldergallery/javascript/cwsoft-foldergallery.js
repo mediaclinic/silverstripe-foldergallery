@@ -21,6 +21,8 @@ $(document).ready(function(){
 		current: '{current}/{total}',
 		arrowKey: true,
 		escKey: true,
+		slideshow: false,
+		slideshowSpeed: 3500,
 		
 		title: function(){
 			// check if displayed jQuery preview image was resized by SilverStripe
@@ -37,6 +39,9 @@ $(document).ready(function(){
 			// insert link to left side of the jQuery close button to display original image in new window
 			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="' + ss.i18n._t('cwsoft-foldergallery.FULL_SCALE') +'">' + ss.i18n._t('cwsoft-foldergallery.FULL_SCALE') + '</a>');
 
+			// re-positon the optional start/stop slideshow text to consider extra space of the inserted button
+			$("#cboxSlideshow").css({"right": "55px"});
+			
 			// return default jQuery image title
 			return this.title;
 		}
