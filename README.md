@@ -2,15 +2,15 @@
 The `cwsoft-foldergallery` module is a light weight folder based gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables to setup small to medium image galleries with ease.
 
 ## Features
-- image upload via Ftp or the SilverStripe files & media centre
+- images organized via SilverStripe assets folder (upload via Ftp or the SilverStripe files & media centre)
+- automatic thumbnail creation of album cover images and album images
+- automatic resize of colorbox preview images (full scale image accessable from jQuery preview)
+- automatic pagination of albums and images (number of albums/images per pages configurable via "_config.php")
 - image description built from image filenames (e.g. "001-your-description.jpg" --> "Your description")
 - image order can be defined by optional prefixing image filenames with numbers (e.g. "001-first-image.jpg")
-- automatic thumbnail creation of uploaded images
-- automatic image resize of preview images used in jQuery effect (full image accessable via jQuery image)
-- pagination of albums and images (number of albums/images per pages configurable via "_config.php")
 - multiple albums support included (organized via subfolders)
 - image gallery appearance customizable via template and CSS files
-- multilingual support (actual: English, Dutch, French and German language files included)
+- multilingual support included (actual: English, Dutch, French and German)
 
 ## Download
 The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads). [Older releases](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
