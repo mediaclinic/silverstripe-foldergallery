@@ -13,7 +13,7 @@
 	
 	<% loop $AlbumFolders %>
 		<div class="album">
-			<% if $AlbumNumberSubAlbums == 0 %>
+			<% if $AlbumNumberImages != 0 && $AlbumNumberSubAlbums == 0 %>
 				<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %>">
 					<% with $AlbumCoverImage %>
 						$CroppedImage($Top.ThumbnailWidth, $Top.ThumbnailHeight)

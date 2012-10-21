@@ -88,7 +88,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	public function AlbumFolders() {
 		// extract all subpage objects (album pages)
 		$pages = $this->Children();
-		if (! $pages) return false;
+		if (! $pages->exists()) return false;
 		
 		// store subpage data in array for further usage
 		$data = $pages->toNestedArray();
@@ -96,8 +96,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		// add additional information to $data array
 		$albumData = new ArrayList();
 		foreach($data as $index => $pageData) {
-			// extract possible sub albums matching $page->AlbumFolderID
-			$subAlbums = Folder::get()->filter('ParentID', $pageData['AlbumFolderID']);
+			// extract number of assigned sub albums (child pages below actual page)
+			$subAlbums = SiteTree::get()->filter('ID', $pageData['ID'])->First()->Children();
 			$data[$index]['AlbumNumberSubAlbums'] = ($subAlbums) ? $subAlbums->Count() : 0;
 
 			// extract all image objects matching $page->AlbumFolderID
@@ -130,18 +130,11 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	public function AlbumImages() {
 		// get album folder matching assigned albumFolderID
 		$albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
+		if (! $albumFolder->exists()) return false;
 		
-		// create paginated list from all images contained in given folder
-		if ($albumFolder->exists()) {
-			$image = Image::get()->filter('ParentID', $albumFolder->First()->ID);
-			if ($image->exists()) {
-				$imageList = new PaginatedList($image, $this->request);
-			} else {
-				$imageList = false;
-			}
-		} else {
-			$imageList = false;
-		}
+		// fetch all images objects of actual folder and wrap it into paginated list
+		$images = Image::get()->filter('ParentID', $albumFolder->First()->ID);
+		$imageList = ($images->exists()) ? new PaginatedList($images, $this->request) : false;
 		
 		// set page limit of displayed images to value defined in _config.php
 		if ($imageList) {
