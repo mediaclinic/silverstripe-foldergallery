@@ -12,9 +12,18 @@
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-#cwsoft-foldergallery .album a {
-	display: block;
-	overflow: hidden;
+/** GENERAL STYLES FOR THE FOLDERGALLERY */
+#cwsoft-foldergallery  {
+	width: auto;
+}
+
+#cwsoft-foldergallery  p.infos {
+	font-weight: bold;
+	margin: 0;
+}
+
+/** STYLES FOR THE ALBUM VIEWS */
+#cwsoft-foldergallery .album {
 	float: left;
 	width: 167px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
 	height: 117px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image */
@@ -23,26 +32,33 @@
 	border-color: #7b6b4a #574d2a #574d2a #7b6b4a;
 	margin: 10px 15px 10px 0;
 	padding: 5px;
-	text-decoration: none;
 }
 
-#cwsoft-foldergallery .album a:hover {
+#cwsoft-foldergallery .album:hover {
 	border: 2px solid #610;
 }
 
-#cwsoft-foldergallery .album a img {
+#cwsoft-foldergallery .album img {
 	border: 1px solid #7b6b4a;
 	margin: 0 0 0 15px;
 }
 
-#cwsoft-foldergallery img.subfolder {
+#cwsoft-foldergallery .album img.subfolder {
 	border: 0 !important;
 	margin: 10px 0 0 40px !important;
 }
 
-#cwsoft-foldergallery .photo a {
-	display: block;
-	overflow: hidden;
+#cwsoft-foldergallery .album a,
+#cwsoft-foldergallery .album a:link,
+#cwsoft-foldergallery .album a:visited,
+#cwsoft-foldergallery .album a:hover,
+#cwsoft-foldergallery .album a:active {
+	text-decoration: none;
+	border: 0;
+}
+
+/** STYLES FOR THE PHOTO THUMBNAIL VIEW */
+#cwsoft-foldergallery .photo {
 	float: left;
 	width: 150px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH */
 	height: 115px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT */
@@ -51,18 +67,27 @@
 	border-color: #ccc #999 #999 #ccc;
 	margin: 7px 15px 7px 0;
 	padding: 8px;
-	text-decoration: none;
 }
 
-#cwsoft-foldergallery .photo a:hover {
+#cwsoft-foldergallery .photo:hover {
 	border: 2px solid #777;
 }
 
-#cwsoft-foldergallery .photo a img {
+#cwsoft-foldergallery .photo img {
 	border: 1px solid #999;
 	margin: 0;
 }
 
+#cwsoft-foldergallery .photo a,
+#cwsoft-foldergallery .photo a:link,
+#cwsoft-foldergallery .photo a:visited,
+#cwsoft-foldergallery .photo a:hover,
+#cwsoft-foldergallery .photo a:active {
+	text-decoration: none;
+	border: 0;
+}
+
+/** STYLES FOR THE FOLDERGALLERY NAVIGATION AND PAGINATION */
 #cwsoft-foldergallery .backlink {
 	clear: both;
 	display: block;
@@ -87,21 +112,7 @@
 	
 }
 
-#cboxFullSizeView {
-	position: absolute;
-	bottom: 0; 
-	right: 26px;
-	background: url(../images/full-size.png) no-repeat 0 0;
-	width: 25px;
-	height: 25px;
-	text-indent: -9999px;
-	cursor: pointer;
-}
-
-#cboxFullSizeView:hover {
-	background-position: -25px 0;
-}
-
+/** STYLES FOR THE ADDITIONAL ADDED jQUERY PREVIEW BUTTON FOR FULL-SCALE VIEW */
 a.cboxFullSizeView {
 	display: block;
 	position: absolute;
