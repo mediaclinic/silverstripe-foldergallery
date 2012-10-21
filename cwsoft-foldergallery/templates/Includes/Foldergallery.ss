@@ -21,11 +21,21 @@
 						$CroppedImage($Top.ThumbnailWidth, $Top.ThumbnailHeight)
 					<% end_with %>
 				</a>
-			
+				
+				<ul class="album-description">
+					<li class="title">&raquo; $Title &laquo;</li>
+					<li><%t Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %></li>
+				</ul>
+				
 			<% else %>
 				<a href="$AlbumURL" title="<%t Foldergallery.ALBUM 'Album' %>: $Title <%t Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %>">
 					<img src="cwsoft-foldergallery/images/subfolder.png" class="subfolder" alt="subfolders"/>
 				</a>
+
+				<ul class="album-description">
+					<li class="title">&raquo; $Title &laquo;</li>
+					<li><%t Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %></li>
+				</ul>
 			<% end_if %>
 		</div>
 	<% end_loop %>

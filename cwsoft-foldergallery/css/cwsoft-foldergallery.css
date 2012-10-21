@@ -19,6 +19,8 @@
 
 #cwsoft-foldergallery .clear {
 	clear: both;
+	margin: 0;
+	padding: 0;
 }
 
 #cwsoft-foldergallery  a,
@@ -50,11 +52,13 @@
 	float: left;
 	width: 167px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
 	height: 117px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image */
+	height: 177px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image + 60 px for album description */
 	background: #ae9f82 url(../images/album-background.png) repeat-y 0 ;
 	border: 2px solid #7b6b4a;
 	border-color: #7b6b4a #574d2a #574d2a #7b6b4a;
 	margin: 0.8em 0.8em 0 0;
 	padding: 5px;
+	overflow: hidden;
 }
 
 #cwsoft-foldergallery .album:hover {
@@ -68,7 +72,28 @@
 
 #cwsoft-foldergallery .album img.subfolder {
 	border: 0 !important;
-	margin: 10px 0 0 40px !important;
+	margin: 0 0 0 30px !important;
+	height: 117px;
+}
+
+#cwsoft-foldergallery .album ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 15px;
+	padding: 0.1em;
+}
+
+#cwsoft-foldergallery .album ul li {
+	list-style-type: none;
+	font-size: 90%;
+	color: #666;
+	line-height: 1.3em;
+	text-align: center;
+}
+
+#cwsoft-foldergallery .album ul li.title {
+	font-weight: bold;
+	color: #444;
 }
 
 /** STYLES FOR THE PHOTO THUMBNAIL VIEWS */
