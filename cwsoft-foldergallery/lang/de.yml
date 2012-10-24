@@ -17,3 +17,5 @@ de:
     NUMBER_OF_IMAGES: '(Bilder: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Unteralben: {subAlbums})'
     START_SLIDESHOW: 'Diashow starten'
+    PREVIOUS: 'zurück'
+    NEXT: 'vor'

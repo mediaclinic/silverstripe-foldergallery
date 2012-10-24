@@ -2,7 +2,7 @@
 	<br class="clear" />
 	<div class="pagination">
 		<% if $AlbumFolders.NotFirstPage %>
-			<a class="prev" href="$AlbumFolders.PrevLink">Prev</a>
+			<a class="prev" href="$AlbumFolders.PrevLink"><%t Foldergallery.PREVIOUS 'Prev' %></a>
 		<% end_if %>
     
 		<% loop $AlbumFolders.Pages %>
@@ -18,7 +18,7 @@
 		<% end_loop %>
     
 		<% if $AlbumFolders.NotLastPage %>
-			<a class="next" href="$AlbumFolders.NextLink">Next</a>
+			<a class="next" href="$AlbumFolders.NextLink"><%t Foldergallery.NEXT 'Next' %></a>
 		<% end_if %>
 	</div>	
 <% end_if %>

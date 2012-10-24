@@ -18,3 +18,5 @@ en:
     NUMBER_OF_IMAGES: '(Images: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Subalbums: {subAlbums})'
     START_SLIDESHOW: 'start slideshow'
+    PREVIOUS: 'previous'
+    NEXT: 'next'
