@@ -1,13 +1,12 @@
 # cwsoft-foldergallery module for CMS SilverStripe 3.x
-The `cwsoft-foldergallery` module is a light weight folder based gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables to setup small to medium image galleries with ease.
+The `cwsoft-foldergallery` module is a light weight, simple to use folder based gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables you to setup small to medium image galleries with ease.
 
 ## Features
-- images organized via SilverStripe assets folder (upload via Ftp or the SilverStripe files & media centre)
-- automatic thumbnail creation of album cover images and album images
-- automatic resize of colorbox preview images (full scale image accessable from jQuery preview)
-- automatic pagination of albums and images (number of albums/images per pages configurable via "_config.php")
+- images displayed from SilverStripe assets folder (upload via Ftp or SilverStripe files & media section)
+- automatic thumbnail creation of album cover images, album pictures and the [ColorBox](http://www.jacklmoore.com/colorbox) preview images
+- automatic album and image pagination (number of albums/images per pages configurable via "_config.php")
 - image description built from image filenames (e.g. "001-your-description.jpg" --> "Your description")
-- image order can be defined by optional prefixing image filenames with numbers (e.g. "001-first-image.jpg")
+- image display order configurable via "_config.php" (sort by: Filename, Creation, LastEdited in ASC/DESC order)
 - multiple albums support included (organized via subfolders)
 - image gallery appearance customizable via template and CSS files
 - multilingual support included (actual: English, Dutch, French and German)
@@ -29,7 +28,7 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 ## Installation
 1. download latest archive from GitHub [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads)
 2. unpack the archive on your local computer
-3. upload the entire ***cwsoft-foldergallery*** folder to your SilverStripe root folder using your preferred Ftp program
+3. upload the entire `cwsoft-foldergallery` folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
 
 ## Usage
