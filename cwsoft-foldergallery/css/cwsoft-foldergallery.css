@@ -23,6 +23,10 @@
 	padding: 0;
 }
 
+#cwsoft-foldergallery .hidden {
+	display: none;
+}
+
 #cwsoft-foldergallery  a,
 #cwsoft-foldergallery  a:link,
 #cwsoft-foldergallery  a:visited,

@@ -55,13 +55,9 @@ $(document).ready(function(){
 	
 	});
 
-	// register event to start slideshow when clicking on a textlink
-	$("a#cboxStartSlideShow").on("click", function() {
-		gallery.colorbox({
-			slideshow: true
-		}).eq(0).click();
+	// make start slideshow text link visible and register callback to start slideshow
+	$("a#cboxStartSlideShow").removeClass("hidden").on("click", function() {
+		gallery.colorbox({slideshow: true}).eq(0).click();
 	});
-
-	
 	
 });
