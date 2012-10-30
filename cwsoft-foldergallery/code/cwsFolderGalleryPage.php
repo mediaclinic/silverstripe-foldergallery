@@ -133,7 +133,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		if (! $albumFolder->exists()) return false;
 		
 		// fetch all images objects of actual folder and wrap it into paginated list
-		$images = Image::get()->filter('ParentID', $albumFolder->First()->ID);
+		$images = Image::get()->filter('ParentID', $albumFolder->First()->ID)->sort($this->getImageSortOption(), $this->getImageSortOrder());
 		$imageList = ($images->exists()) ? new PaginatedList($images, $this->request) : false;
 		
 		// set page limit of displayed images to value defined in _config.php
@@ -178,5 +178,36 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 */
 	public function getThumbnailWidth() {
 		return (int) CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH;
+	}
+
+	/**
+	 * cwsFolderGalleryPage_Controller::getImageSortOption()
+	 * Returns thumbnail image sort option 
+	 * @return string (1:Filename,2:Created,3:LastEdited)
+	 */
+	public function getImageSortOption() {
+		$key = (int) CWS_FOLDERGALLERY_IMAGE_SORT_OPTION;
+		$sort_options = array(
+			1 => 'Filename', 
+			2 => 'Created', 
+			3 => 'LastEdited'
+		);
+		
+		return (array_key_exists($key, $sort_options)) ? $sort_options[$key] : $sort_options[1];
+	}
+
+	/**
+	 * cwsFolderGalleryPage_Controller::getImageSortOrder()
+	 * Returns thumbnail image sort order
+	 * @return string (1:ASC,2:DESC)
+	 */
+	public function getImageSortOrder() {
+		$key = (int) CWS_FOLDERGALLERY_IMAGE_SORT_ORDER;
+		$sort_order = array(
+			1 => 'ASC', 
+			2 => 'DESC' 
+		);
+		
+		return (array_key_exists($key, $sort_order)) ? $sort_order[$key] : $sort_order[1];
 	}
 }
