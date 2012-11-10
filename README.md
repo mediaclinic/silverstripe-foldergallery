@@ -4,9 +4,10 @@ The `cwsoft-foldergallery` module is a light weight, simple to use folder based 
 ## Features
 - images displayed from SilverStripe assets folder (upload via Ftp or SilverStripe files & media section)
 - automatic thumbnail creation of album cover images, album pictures and the [ColorBox](http://www.jacklmoore.com/colorbox) preview images
-- automatic album and image pagination (number of albums/images per pages configurable via "_config.php")
+- automatic album and image pagination (number of albums/images per pages configurable via "_config/settings.yml")
+- option to start slide show for displayed images by mouse click
 - image description built from image filenames (e.g. "001-your-description.jpg" --> "Your description")
-- image display order configurable via "_config.php" (sort by: Filename, Creation, LastEdited in ASC/DESC order)
+- image display order configurable via "_config/settings.yml" (sort by: Filename, Creation, LastEdited in ASC/DESC order)
 - multiple albums support included (organized via subfolders)
 - image gallery appearance customizable via template and CSS files
 - multilingual support included (actual: English, Dutch, French and German)
