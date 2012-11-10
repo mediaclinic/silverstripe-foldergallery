@@ -116,7 +116,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		
 		// set page limit of displayed images to value defined in _config.php
 		if ($albumList) {
-			$albumList->setPageLength(CWS_FOLDERGALLERY_ALBUMS_PER_PAGE);
+			$albumsPerPage = (int) Config::inst()->get('cwsFolderGallery', 'ALBUMS_PER_PAGE');
+			$albumList->setPageLength($albumsPerPage);
 		}
 		
 		return $albumList;
@@ -138,7 +139,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		
 		// set page limit of displayed images to value defined in _config.php
 		if ($imageList) {
-			$imageList->setPageLength(CWS_FOLDERGALLERY_IMAGES_PER_PAGE);
+			$imagesPerPage = (int) Config::inst()->get('cwsFolderGallery', 'IMAGES_PER_PAGE');
+			$imageList->setPageLength($imagesPerPage);
 		}
 		
 		return $imageList;
@@ -149,8 +151,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Returns maximum jQuery preview image size in pixel
 	 * @return Integer
 	 */
-	public function getPreviewImageMaxSize() {
-		return (int) CWS_FOLDERGALLERY_PREVIEW_IMAGE_MAX_SIZE;
+	public static function getPreviewImageMaxSize() {
+		return (int) Config::inst()->get('cwsFolderGallery', 'PREVIEW_IMAGE_MAX_SIZE');
 	}
 
 	/**
@@ -158,8 +160,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Returns true if breadcrumbs should be shown otherwise false
 	 * @return Bool
 	 */
-	public function getShowBreadcrumbs() {
-		return (bool) CWS_FOLDERGALLERY_SHOW_BREADCRUMBS;
+	public static function getShowBreadcrumbs() {
+		return (bool) Config::inst()->get('cwsFolderGallery', 'SHOW_BREADCRUMBS');
 	}
 	
 	/**
@@ -167,8 +169,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Returns thumbnail height in pixel
 	 * @return Integer
 	 */
-	public function getThumbnailHeight() {
-		return (int) CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT;
+	public static function getThumbnailHeight() {
+		return (int) Config::inst()->get('cwsFolderGallery', 'THUMBNAIL_IMAGE_HEIGHT');
 	}
 	
 	/**
@@ -176,8 +178,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Returns thumbnail width in pixel
 	 * @return Integer
 	 */
-	public function getThumbnailWidth() {
-		return (int) CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH;
+	public static function getThumbnailWidth() {
+		return Config::inst()->get('cwsFolderGallery', 'THUMBNAIL_IMAGE_WIDTH');
 	}
 
 	/**
@@ -185,8 +187,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Returns thumbnail image sort option 
 	 * @return string (1:Filename,2:Created,3:LastEdited)
 	 */
-	public function getImageSortOption() {
-		$key = (int) CWS_FOLDERGALLERY_IMAGE_SORT_OPTION;
+	public static function getImageSortOption() {
+		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_OPTION');
 		$sort_options = array(
 			1 => 'Filename', 
 			2 => 'Created', 
@@ -201,8 +203,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	 * Returns thumbnail image sort order
 	 * @return string (1:ASC,2:DESC)
 	 */
-	public function getImageSortOrder() {
-		$key = (int) CWS_FOLDERGALLERY_IMAGE_SORT_ORDER;
+	public static function getImageSortOrder() {
+		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_ORDER');
 		$sort_order = array(
 			1 => 'ASC', 
 			2 => 'DESC' 

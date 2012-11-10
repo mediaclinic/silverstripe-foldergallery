@@ -54,9 +54,8 @@
 /** STYLES FOR THE ALBUM FOLDER VIEWS */
 #cwsoft-foldergallery .album {
 	float: left;
-	width: 167px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
-	height: 117px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image */
-	height: 177px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image + 60 px for album description */
+	width: 167px;	/* _config/settings.yml:THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
+	height: 177px;	/* _config/settings.yml:THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image + 60 px for album description */
 	background: #ae9f82 url(../images/album-background.png) repeat-y 0 ;
 	border: 2px solid #7b6b4a;
 	border-color: #7b6b4a #574d2a #574d2a #7b6b4a;
@@ -103,8 +102,8 @@
 /** STYLES FOR THE PHOTO THUMBNAIL VIEWS */
 #cwsoft-foldergallery .photo {
 	float: left;
-	width: 150px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_WIDTH */
-	height: 115px;	/* _config.php:CWS_FOLDERGALLERY_THUMBNAIL_IMAGE_HEIGHT */
+	width: 150px;	/* _config/settings.yml:THUMBNAIL_IMAGE_WIDTH */
+	height: 115px;	/* _config/settings.yml:THUMBNAIL_IMAGE_HEIGHT */
 	background: none repeat scroll 0 0 white;
 	border: 2px solid #ccc;
 	border-color: #ccc #999 #999 #ccc;
