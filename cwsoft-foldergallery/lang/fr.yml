@@ -14,7 +14,7 @@ fr:
     BACK_TO_ALBUM_OVERVIEW: "Retourner à l'aperçu des albums"
     DISPLAYED_ALBUMS: 'Albums affichés&nbsp;'
     DISPLAYED_IMAGES: 'Images affichées&nbsp;'
-    NOTE: 'Notes&nbsp;'
+    NOTE: 'Note&nbsp;'
     NUMBER_OF_IMAGES: '(Images&nbsp;: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Sous-albums&nbsp;: {subAlbums})'
     START_SLIDESHOW: 'démarrer diaporama'
