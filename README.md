@@ -13,7 +13,7 @@ The `cwsoft-foldergallery` module is a light weight, simple to use folder based 
 - multilingual support included (actual: English, Dutch, French and German)
 
 ## Download
-The latest stable release of the `cwsoft-foldergallery` module is available as ZIP or TAR archive in GitHubs [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads). [Older releases](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags) are still available for download, but are no longer maintained. The development history of the foldergallery module can be tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
+You can download an archive of the latest development branch of the `cwsoft-foldergallery` module using GitHubs [ZIP button](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/master.zip). The archives of previous module releases can be found in GitHubs [Tags section](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags). The development history is tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
 
 Note: An older, but unsupported version for SilverStripe 2.4.x can be found and downloaded in the [2.4.x branch](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/2.4.x) at GitHub.
 
@@ -27,7 +27,7 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 - PHP ***5.3*** or higher (recommended last stable PHP 5.4.x version)
 
 ## Installation
-1. download latest archive from GitHub [download area](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/downloads)
+1. download latest [module archive](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/master.zip) from GitHub
 2. unpack the archive on your local computer
 3. upload the entire `cwsoft-foldergallery` folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
