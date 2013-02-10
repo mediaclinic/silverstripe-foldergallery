@@ -69,4 +69,4 @@ Credits go to the following SilverStripe community members who helped in one way
 
  - [Kereru](http://www.silverstripe.org/ForumMemberProfile/show/26608): Bug report on thumbnail creation
  - [haantje72](http://www.silverstripe.org/ForumMemberProfile/show/5933): Dutch translation, ideas and suggestions for further improvements
- - [Juanitou](http://www.silverstripe.org/ForumMemberProfile/show/3189): French translation, bugfixes, [i18n Javascript support](commit/9273343fa07eee5e3a5b2f05760237e397010193) 
+ - [Juanitou](http://www.silverstripe.org/ForumMemberProfile/show/3189): French translation, bugfixes, [i18n Javascript support](/commit/9273343fa07eee5e3a5b2f05760237e397010193) 
