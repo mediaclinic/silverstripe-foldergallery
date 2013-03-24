@@ -32,6 +32,13 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 3. upload the entire `cwsoft-foldergallery` folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
 
+## Adapt foldergallery layout to match your theme layout
+By default, the Foldergallery layout matches the SilverStripe 3.x standard `simple` theme layout. You can adapt the Foldergallery layout to match your theme by following the steps below.
+
+1. copy `themes/your-theme/templates/Layout/Page.ss` to `cwsoft-foldergallery/templates/Layout/cwsFolderGalleryPage.ss`
+2. add the code `<% include Foldergallery %>` after `$Content` (in file cwsFolderGalleryPage.ss)
+3. flush the cache and visit the Foldergallery page in your frontend
+
 ## Usage
 To setup a `cwsoft-foldergallery` page with two albums "Animals" and "Buildings", just follow the steps shown in the sketch below. The steps below assume you have already installed the module before.
 

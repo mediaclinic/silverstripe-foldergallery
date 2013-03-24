@@ -14,8 +14,14 @@
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-// defines image quality of created thumbnails
-GD::set_default_quality(95);
+// increase quality of created thumbnails
+if (class_exists('GDBackend')) {
+	// SilverStripe >= 3.1.0
+	GDBackend::set_default_quality(95);
+} else {
+	// SilverStripe 3.0.x
+	GD::set_default_quality(95);
+}
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // DO NOT CHANGE ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING :-)
