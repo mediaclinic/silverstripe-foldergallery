@@ -43,21 +43,20 @@ $(document).ready(function(){
 			$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="' + ss.i18n._t('cwsoft-foldergallery.FULL_SCALE') +'">' + ss.i18n._t('cwsoft-foldergallery.FULL_SCALE') + '</a>');
 
 			// re-positon the optional start/stop slideshow text to consider extra space of the inserted button
-			$("#cboxSlideshow").css({"right": "55px"});
+			$("#cboxSlideshow").css({"right": "55px", "text-transform": "none"});
 			
 			// return default jQuery image title
 			return this.title;
 		},
-	
-		cbox_closed: function() {
+
+		onClosed: function(){
 			gallery.colorbox({slideshow: false});
 		}
-	
 	});
 
 	// make start slideshow text link visible and register callback to start slideshow
 	$("a#cboxStartSlideShow").removeClass("hidden").on("click", function() {
 		gallery.colorbox({slideshow: true}).eq(0).click();
 	});
-	
+
 });
