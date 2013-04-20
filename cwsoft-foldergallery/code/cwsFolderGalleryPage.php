@@ -14,12 +14,12 @@
 */
 
 class cwsFolderGalleryPage extends Page {
-	static $allowed_children = array('cwsFolderGalleryPage');
-	static $db = array('AlbumFolderID' => 'Int');
-	static $icon = 'cwsoft-foldergallery/images/page-tree-icon.gif';
-	static $plural_name = 'Foldergalleries';
-	static $singular_name = 'Foldergallery';
-	static $description = 'Folder based gallery';
+	private static $allowed_children = array('cwsFolderGalleryPage');
+	private static $db = array('AlbumFolderID' => 'Int');
+	private static $icon = 'cwsoft-foldergallery/images/page-tree-icon.gif';
+	private static $plural_name = 'Foldergalleries';
+	private static $singular_name = 'Foldergallery';
+	private static $description = 'Folder based gallery';
 
 	/**
 	 * cwsFolderGalleryPage::getCMSFields()
