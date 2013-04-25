@@ -11,7 +11,7 @@ A lightweight folder based gallery module for the [SilverStripe CMS](http://silv
 - multilingual support included (currently: English and German)
 
 ## Download
-The last stable release of the `cwsoft-foldergallery v1.2.0` module for SilverStripe 2.4.x is available as [ZIP](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/zipball/v1.2.0) or [TAR](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tarball/v1.2.0) archive. This is the last release for SilverStripe 2.4.x branch. Later releases of the cwsoft-foldergallery module do need SilverStripe 3.x and can be found at [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery#readme).
+The last stable release of the `cwsoft-foldergallery v1.2.0` module for SilverStripe 2.4.x is available as [ZIP](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/v1.2.0.zip) archive. This is the last release for the SilverStripe 2.4.x platform. Later releases of the cwsoft-foldergallery module do need SilverStripe 3.x and can be found at [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery#readme).
 
 ## License
 The `cwsoft-foldergallery` module is licensed under the [GNU General Public License (GPL) v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
@@ -50,6 +50,10 @@ To use the multiple albums features, create a page tree structure as follows:
 	- Gallery (type: Folder Gallery)
 	  + Album 2011 (type: Folder Gallery)
 	  + Album 2012 (type: Folder Gallery)
+
+A screenshot of the frontend is shown below.
+
+![](.screenshots/cwsoft-foldergallery-frontend.png)
 
 ## Questions
 If you have questions or issues with cwsoft-foldergallery, please visit the [SilverStripe](http://www.silverstripe.org/all-other-modules/show/20738) forum thread and ask for feedback.
