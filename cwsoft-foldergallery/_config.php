@@ -14,9 +14,6 @@
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-// increase quality of created thumbnails
-GDBackend::set_default_quality(95);
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // DO NOT CHANGE ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING :-)
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -34,6 +31,3 @@ if ($folderName != $moduleName) {
 		E_USER_ERROR
 	);
 }
-
-// extend image object to allow extraction of image description from it's filename
-Object::add_extension('Image', 'cwsFolderGalleryImageExtension');
