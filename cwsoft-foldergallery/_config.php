@@ -34,6 +34,3 @@ if ($folderName != $moduleName) {
 		E_USER_ERROR
 	);
 }
-
-// extend image object to allow extraction of image description from it's filename
-Object::add_extension('Image', 'cwsFolderGalleryImageExtension');
