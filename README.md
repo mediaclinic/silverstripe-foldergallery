@@ -1,4 +1,4 @@
-# cwsoft-foldergallery image gallery module for CMS SilverStripe 3.x
+# Folder based image gallery for CMS SilverStripe 3.x
 The `cwsoft-foldergallery` module is a light weight, simple to use folder based image gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables you to setup small to medium image galleries with ease.
 
 ## Features
