@@ -1,5 +1,5 @@
-# Foldergallery module for CMS SilverStripe (2.4.x)
-A lightweight folder based gallery module for the [SilverStripe CMS](http://silverstripe.org).
+# Folder based image gallery for CMS SilverStripe (2.4.x)
+A lightweight folder based image gallery module for the [SilverStripe CMS](http://silverstripe.org).
 
 ## Features
 - easy upload of images via Ftp or the SilverStripe backend (Files & Images)
