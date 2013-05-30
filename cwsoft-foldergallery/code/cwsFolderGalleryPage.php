@@ -22,7 +22,7 @@ class cwsFolderGalleryPage extends Page {
 	private static $description = 'Folder based gallery';
 
 	/**
-	 * cwsFolderGalleryPage::getCMSFields()
+	 * Function getCMSFields()
 	 * Adds dropdown field containing album folders (subfolders of assets/cwsoft-foldergallery)
 	 * @return Backend fields
 	 */
@@ -50,6 +50,16 @@ class cwsFolderGalleryPage extends Page {
 		$fields->addFieldToTab('Root.Main', $tree, 'Content');
 		
 		return $fields;
+	}
+
+	/**
+	 * Function onBeforeWrite()
+	 * Creates/updates ExifDate database column of all image objects when cwsoft-foldergallery page is saved
+	 * @return void
+	 */
+	function onBeforeWrite() {
+		cwsFolderGalleryImageExtension::writeExifDates();
+		parent::onBeforeWrite();
 	}
 }
  
@@ -132,7 +142,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		// get album folder matching assigned albumFolderID
 		$albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
 		if (! $albumFolder->exists()) return false;
-		
+
 		// fetch all images objects of actual folder and wrap it into paginated list
 		$images = Image::get()->filter('ParentID', $albumFolder->First()->ID)->sort($this->getImageSortOption(), $this->getImageSortOrder());
 		$imageList = ($images->exists()) ? new PaginatedList($images, $this->request) : false;
@@ -142,7 +152,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 			$imagesPerPage = (int) Config::inst()->get('cwsFolderGallery', 'IMAGES_PER_PAGE');
 			$imageList->setPageLength($imagesPerPage);
 		}
-		
+
 		return $imageList;
 	}
 
@@ -192,7 +202,8 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		$sort_options = array(
 			1 => 'Filename', 
 			2 => 'Created', 
-			3 => 'LastEdited'
+			3 => 'LastEdited',
+			4 => 'ExifDate',
 		);
 		
 		return (array_key_exists($key, $sort_options)) ? $sort_options[$key] : $sort_options[1];
@@ -207,7 +218,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_ORDER');
 		$sort_order = array(
 			1 => 'ASC', 
-			2 => 'DESC' 
+			2 => 'DESC',
 		);
 		
 		return (array_key_exists($key, $sort_order)) ? $sort_order[$key] : $sort_order[1];

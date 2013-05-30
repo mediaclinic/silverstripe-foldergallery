@@ -17,7 +17,7 @@ cwsFolderGallery:
    ALBUMS_PER_PAGE: 16
    IMAGES_PER_PAGE: 12
 
-   # sort option by which images are displayed (1:Filename, 2:CreationTime, 3:LastEdited)
+   # sort option by which images are displayed (1:Filename, 2:CreationTime, 3:LastEdited, 4: ExifDate)
    IMAGE_SORT_OPTION: 1
 
    # sort order by which images are displayed (1:Ascending, 2:Descending)
