@@ -51,6 +51,16 @@ class cwsFolderGalleryPage extends Page {
 		
 		return $fields;
 	}
+
+	/**
+	 * Function onBeforeWrite()
+	 * Creates/updates ExifDate database column of all image objects when cwsoft-foldergallery page is saved
+	 * @return void
+	 */
+	function onBeforeWrite() {
+		cwsFolderGalleryImageExtension::writeExifDates();
+		parent::onBeforeWrite();
+	}
 }
  
 class cwsFolderGalleryPage_Controller extends Page_Controller {
@@ -185,14 +195,15 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	/**
 	 * cwsFolderGalleryPage_Controller::getImageSortOption()
 	 * Returns thumbnail image sort option 
-	 * @return string (1:Filename,2:Created,3:LastEdited)
+	 * @return string (1:Filename,2:Created,3:LastEdited,4:ExifDate)
 	 */
 	public static function getImageSortOption() {
 		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_OPTION');
 		$sort_options = array(
 			1 => 'Filename', 
 			2 => 'Created', 
-			3 => 'LastEdited'
+			3 => 'LastEdited',
+			4 => 'ExifDate',
 		);
 		
 		return (array_key_exists($key, $sort_options)) ? $sort_options[$key] : $sort_options[1];
@@ -207,7 +218,7 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_ORDER');
 		$sort_order = array(
 			1 => 'ASC', 
-			2 => 'DESC' 
+			2 => 'DESC',
 		);
 		
 		return (array_key_exists($key, $sort_order)) ? $sort_order[$key] : $sort_order[1];
