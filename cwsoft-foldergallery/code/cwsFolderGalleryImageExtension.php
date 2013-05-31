@@ -60,7 +60,7 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 	public static function writeExifDates($parentId=null) {
 		// fetch all requested image objects
 		if (is_numeric($parentId)) {
-			$images = Image::get()->filter('ParentID', $parentID);
+			$images = Image::get()->filter('ParentID', $parentId);
 		} else {
 			$images = Image::get();
 		}

@@ -59,7 +59,7 @@ class cwsFolderGalleryPage extends Page {
 	 */
 	function onBeforeWrite() {
 		parent::onBeforeWrite();
-		cwsFolderGalleryImageExtension::writeExifDates();
+		cwsFolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
 	}
 }
  
