@@ -5,7 +5,7 @@
  * 
  * LICENSE: GNU General Public License 3.0
  * 
- * @platform    CMS SilverStripe 3
+ * @platform    CMS SilverStripe 3.0.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
  * @copyright   cwsoft

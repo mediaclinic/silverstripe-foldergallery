@@ -2,11 +2,11 @@
 /**
  * A lightweight folder based gallery module for the CMS SilverStripe
  *
- * Extends Image objects to provide image caption build from the filename.
+ * Extends SilverStripe image object to provide Caption() and EXIF data.
  * 
  * LICENSE: GNU General Public License 3.0
  * 
- * @platform    CMS SilverStripe 3
+ * @platform    CMS SilverStripe 3.0.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
  * @copyright   cwsoft
@@ -15,15 +15,14 @@
 
 class cwsFolderGalleryImageExtension extends DataExtension {
 	// decorate Image object with additional ExifDate field
-	static $db = array('ExifDate' => 'SS_Datetime');
+	private static $db = array('ExifDate' => 'SS_Datetime');
 
 	/**
-	 * Function Caption()
-	 * Creates an image caption from the image filename. 
-	 * Strips off optional image order numbers and image extension.
+	 * Creates a nice looking image caption from an image filename.
+	 * Optional order numbers and file extensions are stripped off.
 	 * Example: "xxx-your-image-description.ext" ==> "Your image description"
 	 *
-	 * @return String with image caption
+	 * @return string Image caption created from filename
 	 */
 	public function Caption() {
 		if (preg_match('#(\d*-)?(.+)\.(jpg|jpeg|gif|png|tif|tiff)#i', $this->owner->Title, $matches)) {
@@ -33,10 +32,10 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 	}
 
 	/**
-	 * Function ExifData()
-	 * Returns EXIF data defined by $field from images (JPEG, TIFF) stored by the camera.
+	 * Returns EXIF info defined by $field from images (JPEG, TIFF) stored by the camera.
 	 *
-	 * @return requested Exif data
+	 * @param string $field String with EXIF field to be returned
+	 * @return EXIF data or null
 	 */
 	public function ExifData($field='DateTimeOriginal') {
 		// only JPEG and TIFF files contain EXIF data
@@ -44,7 +43,7 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 		if (! in_array($image_extension, array('jpg', 'jpeg', 'tif', 'tiff'))) {
 			return null;
 		}
-
+		
 		// extract requested EXIF field
 		$image_path = Director::getAbsFile($this->owner->Filename);
 		$exif_data = exif_read_data($image_path, 'EXIF', false, false);
@@ -53,9 +52,9 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 	}
 
 	/**
-	 * Function writeExifDates()
-	 * Creates/updates the ExifDate DB column of all image objects.
-	 * If $parentId is set, only objects assigned to ParentId are updated.
+	 * Creates/updates the ExifDate database column of all image objects.
+	 *
+	 * @param integer $parentId (if set only image objects assigned to this ID are updated)
 	 * @return void
 	 */
 	public static function writeExifDates($parentId=null) {
@@ -65,15 +64,15 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 		} else {
 			$images = Image::get();
 		}
-
+		
 		if (! $images->exists()) return false;
-
+		
 		// write/update Image.ExifDate database columns
 		foreach ($images as $image) {
 			// get exif original storage date if available
 			$exif_date = $image->ExifData($field='DateTimeOriginal');
 			$exif_date = is_null($exif_date) ? $image->Created : $exif_date;
-
+			
 			// update database field
 			$image->ExifDate = $exif_date;
 			$image->write();

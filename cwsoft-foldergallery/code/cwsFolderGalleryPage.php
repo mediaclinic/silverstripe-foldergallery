@@ -6,7 +6,7 @@
  * 
  * LICENSE: GNU General Public License 3.0
  * 
- * @platform    CMS SilverStripe 3
+ * @platform    CMS SilverStripe 3.0.x
  * @package     cwsoft-foldergallery
  * @author      cwsoft (http://cwsoft.de)
  * @copyright   cwsoft
@@ -22,9 +22,9 @@ class cwsFolderGalleryPage extends Page {
 	static $description = 'Folder based gallery';
 
 	/**
-	 * cwsFolderGalleryPage::getCMSFields()
-	 * Adds dropdown field containing album folders (subfolders of assets/cwsoft-foldergallery)
-	 * @return Backend fields
+	 * Adds dropdown field for album folders (subfolders inside assets/cwsoft-foldergallery)
+	 *
+	 * @return modified backend fields
 	 */
 	function getCMSFields() {
 		// create folder assets/cwsoft-foldergallery if not already exists
@@ -53,20 +53,20 @@ class cwsFolderGalleryPage extends Page {
 	}
 
 	/**
-	 * Function onBeforeWrite()
-	 * Creates/updates ExifDate database column of all image objects when cwsoft-foldergallery page is saved
+	 * Creates/updates the ExifDate database column of all image objects
+	 *
 	 * @return void
 	 */
 	function onBeforeWrite() {
-		cwsFolderGalleryImageExtension::writeExifDates();
 		parent::onBeforeWrite();
+		cwsFolderGalleryImageExtension::writeExifDates();
 	}
 }
  
 class cwsFolderGalleryPage_Controller extends Page_Controller {
 	/**
-	 * cwsFolderGalleryPage_Controller::init()
-	 * Inlcudes the CSS and Javascript files required by the cwsoft-foldergallery module.
+	 * Inlcudes the CSS and Javascript files required by the cwsoft-foldergallery module
+	 *
 	 * @return void
 	 */
 	 function init() {
@@ -90,10 +90,10 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	}
 
 	/**
-	 * cwsFolderGalleryPage_Controller::AlbumFolders()
-	 * Returns paginated list of all album pages linked to the actual page via $AlbumFolderID.
+	 * Creates paginated list of all album pages linked to the actual page via $AlbumFolderID.
 	 * Includes extras like album cover image, available album images and album page link.
-	 * @return Folder objects
+	 *
+	 * @return paginated list of folder objects
 	 */
 	public function AlbumFolders() {
 		// extract all subpage objects (album pages)
@@ -134,15 +134,15 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	}
 
 	/**
-	 * cwsFolderGalleryPage_Controller::AlbumImages()
-	 * Returns a paginated list of all image objects contained in page/album matching $AlbumFolderID 
-	 * @return Image objects
+	 * Creates a paginated list of all image objects contained in page/album matching $AlbumFolderID 
+	 *
+	 * @return paginated list with image objects of the actual album
 	 */
 	public function AlbumImages() {
 		// get album folder matching assigned albumFolderID
 		$albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
 		if (! $albumFolder->exists()) return false;
-		
+
 		// fetch all images objects of actual folder and wrap it into paginated list
 		$images = Image::get()->filter('ParentID', $albumFolder->First()->ID)->sort($this->getImageSortOption(), $this->getImageSortOrder());
 		$imageList = ($images->exists()) ? new PaginatedList($images, $this->request) : false;
@@ -152,50 +152,50 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 			$imagesPerPage = (int) Config::inst()->get('cwsFolderGallery', 'IMAGES_PER_PAGE');
 			$imageList->setPageLength($imagesPerPage);
 		}
-		
+
 		return $imageList;
 	}
 
 	/**
-	 * cwsFolderGalleryPage_Controller::getPreviewImageMaxSize()
-	 * Returns maximum jQuery preview image size in pixel
-	 * @return Integer
+	 * Extracts maximum jQuery preview image size in pixel defined in _config/settings.yml
+	 *
+	 * @return integer Maximum preview image size in pixel
 	 */
 	public static function getPreviewImageMaxSize() {
 		return (int) Config::inst()->get('cwsFolderGallery', 'PREVIEW_IMAGE_MAX_SIZE');
 	}
 
 	/**
-	 * cwsFolderGalleryPage_Controller::getShowBreadcrumbgs()
-	 * Returns true if breadcrumbs should be shown otherwise false
-	 * @return Bool
+	 * Extracts breadcrumb settings defined in _config/settings.yml
+	 *
+	 * @return bool Flag indicating if breadcrumbs are displayed or not
 	 */
 	public static function getShowBreadcrumbs() {
 		return (bool) Config::inst()->get('cwsFolderGallery', 'SHOW_BREADCRUMBS');
 	}
 	
 	/**
-	 * cwsFolderGalleryPage_Controller::getThumbnailHeight()
-	 * Returns thumbnail height in pixel
-	 * @return Integer
+	 * Extracts thumbnail height in pixel defined in _config/settings.yml
+	 *
+	 * @return integer Thumbnail height in pixel
 	 */
 	public static function getThumbnailHeight() {
 		return (int) Config::inst()->get('cwsFolderGallery', 'THUMBNAIL_IMAGE_HEIGHT');
 	}
 	
 	/**
-	 * cwsFolderGalleryPage_Controller::getThumbnailWidth()
-	 * Returns thumbnail width in pixel
-	 * @return Integer
+	 * Extracts thumbnail width in pixel defined in _config/settings.yml
+	 *
+	 * @return integer Thumbnail width in pixel
 	 */
 	public static function getThumbnailWidth() {
 		return Config::inst()->get('cwsFolderGallery', 'THUMBNAIL_IMAGE_WIDTH');
 	}
 
 	/**
-	 * cwsFolderGalleryPage_Controller::getImageSortOption()
-	 * Returns thumbnail image sort option 
-	 * @return string (1:Filename,2:Created,3:LastEdited,4:ExifDate)
+	 * Extracts the image sort option defined in _config/settings.yml
+	 *
+	 * @return string (Filename, Created, LastEdited, ExifDate)
 	 */
 	public static function getImageSortOption() {
 		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_OPTION');
@@ -210,9 +210,9 @@ class cwsFolderGalleryPage_Controller extends Page_Controller {
 	}
 
 	/**
-	 * cwsFolderGalleryPage_Controller::getImageSortOrder()
-	 * Returns thumbnail image sort order
-	 * @return string (1:ASC,2:DESC)
+	 * Extracts the image sort order defined in _config/settings.yml
+	 *
+	 * @return string (ASC, DESC)
 	 */
 	public static function getImageSortOrder() {
 		$key = (int) Config::inst()->get('cwsFolderGallery', 'IMAGE_SORT_ORDER');
