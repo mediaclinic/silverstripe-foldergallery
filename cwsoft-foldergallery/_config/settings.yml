@@ -26,10 +26,6 @@ cwsFolderGallery:
    # flag to display breadcrumbs at top of album pages (only if at least one parent page exists)
    SHOW_BREADCRUMBS: true
 
-GDBackend:
-   # increase thumbnail image quality (default: 75)
-   default_quality: 95
-
 Image:
    # extend image class by method Caption to build image caption from the filename
    extensions:
