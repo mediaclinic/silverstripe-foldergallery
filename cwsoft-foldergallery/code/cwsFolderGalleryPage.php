@@ -53,13 +53,15 @@ class cwsFolderGalleryPage extends Page {
 	}
 
 	/**
-	 * Creates/updates the ExifDate database column of all image objects
+	 * Updates the Image.ExifDate database column of image objects
 	 *
 	 * @return void
 	 */
 	function onBeforeWrite() {
 		parent::onBeforeWrite();
-		cwsFolderGalleryImageExtension::writeExifDates();
+
+		// update Image.ExifDate database fields of all images assigned to actual page
+		cwsFolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
 	}
 }
  
