@@ -46,7 +46,7 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 		
 		// extract requested EXIF field
 		$image_path = Director::getAbsFile($this->owner->Filename);
-		$exif_data = exif_read_data($image_path, 'EXIF', false, false);
+		$exif_data = @exif_read_data($image_path, 'EXIF', false, false);
 		$exif_field = isset($exif_data[$field]) ? $exif_data[$field] : null;
 		return $exif_field;
 	}
