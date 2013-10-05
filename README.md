@@ -1,4 +1,4 @@
-# Folder based image gallery for CMS SilverStripe 3.x
+# Folder based image gallery for CMS SilverStripe 3.0.x
 The `cwsoft-foldergallery` module is a light weight, simple to use folder based image gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables you to setup small to medium image galleries with ease.
 
 ## Features
@@ -13,9 +13,9 @@ The `cwsoft-foldergallery` module is a light weight, simple to use folder based 
 - multilingual support included (actual: English, Dutch, French and German)
 
 ## Download
-You can download an archive of the latest development branch of the `cwsoft-foldergallery` module using GitHubs [ZIP button](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/master.zip). The archives of previous module releases can be found in GitHubs [Tags section](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags). The development history is tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
+You can download an archive of the cwsoft-foldergallery module for SilverStripe 3.0.x from the GitHub [3.0.x](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/3.0.x.zip) branch. The archives of previous module releases can be found in GitHubs [Tags section](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags). The development history is tracked via GitHub.
 
-Note: An older, but unsupported version for SilverStripe 2.4.x can be found and downloaded in the [2.4.x branch](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/2.4.x) at GitHub. A version for SilverStripe 3.1.x is available in the [3.1.x branch](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/3.1.x).
+Note: You can download the last stable version of the cwsoft-foldergallery module for SilverStripe [2.4.x](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/2.4.x) and [3.1.x](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/3.0.x.zip) series from GitHub.
 
 ## License
 The `cwsoft-foldergallery` module is licensed under the [GNU General Public License (GPL) v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
@@ -23,11 +23,11 @@ The `cwsoft-foldergallery` module is licensed under the [GNU General Public Lice
 ## Requirements
 The minimum requirements to get the cwsoft-foldergallery module running on your SilverStripe installation are as follows:
 
-- SilverStripe ***3.0.x*** or higher (recommended last stable 3.x version)
+- SilverStripe ***3.0.x***
 - PHP ***5.3*** or higher (recommended last stable PHP 5.4.x version)
 
 ## Installation
-1. download latest [module archive](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/master.zip) from GitHub
+1. download latest [module archive](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/3.0.x.zip) from GitHub
 2. unpack the archive on your local computer
 3. upload the entire `cwsoft-foldergallery` folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
