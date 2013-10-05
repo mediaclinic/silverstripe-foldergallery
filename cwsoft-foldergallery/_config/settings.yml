@@ -7,7 +7,7 @@ After:
 cwsFolderGallery:
    # pixel size of cropped album cover and album image thumbnails
    # Note: adapt "css/cwsoft-foldergallery.css" if you change the dimensions below
-   THUMBNAIL_IMAGE_WIDTH: 150		
+   THUMBNAIL_IMAGE_WIDTH: 150
    THUMBNAIL_IMAGE_HEIGHT: 115
 
    # max. pixel dimension of resized jQuery preview image (original image ratio kept)

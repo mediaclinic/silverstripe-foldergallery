@@ -13,9 +13,9 @@ The `cwsoft-foldergallery` module is a light weight, simple to use folder based 
 - multilingual support included (actual: English, Dutch, French and German)
 
 ## Download
-You can download an archive of the `cwsoft-foldergallery` module for the SilverStripe 3.1.x branch using GitHubs [ZIP button](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/3.1.x.zip). The archives of previous module releases can be found in GitHubs [Tags section](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags). The development history is tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
+You can download an archive of the `cwsoft-foldergallery` module for the SilverStripe 3.1.x branch using GitHubs [ZIP button](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/master.zip). The archives of previous module releases can be found in GitHubs [Tags section](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tags). The development history is tracked via [GitHub](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commits/master).
 
-Note: An older, but unsupported version for SilverStripe 2.4.x can be found and downloaded in the [2.4.x branch](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/2.4.x) at GitHub. A version for SilverStripe 3.0.x can be downloaded from the [master branch](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery) of the module.
+***Note: ***You can download the last stable (but no longer maintained) version of the cwsoft-foldergallery module for SilverStripe [2.4.x]https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/2.4.x) and [3.0.x](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/tree/3.0.x) series from GitHub.
 
 ## License
 The `cwsoft-foldergallery` module is licensed under the [GNU General Public License (GPL) v3.0](http://www.gnu.org/licenses/gpl-3.0.html).
@@ -27,7 +27,7 @@ The minimum requirements to get the cwsoft-foldergallery module running on your 
 - PHP ***5.3*** or higher (recommended last stable PHP 5.4.x version)
 
 ## Installation
-1. download latest [module archive](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/3.1.x.zip) from GitHub
+1. download latest SilverStripe 3.1.x [module archive](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/archive/master.zip) from GitHub
 2. unpack the archive on your local computer
 3. upload the entire `cwsoft-foldergallery` folder to your SilverStripe root folder using your preferred Ftp program
 4. update your SilverStripe database via `http://yourdomain.com/dev/build?flush=all`
