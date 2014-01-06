@@ -60,8 +60,11 @@ class cwsFolderGalleryPage extends Page {
 	function onAfterWrite() {
 		parent::onAfterWrite();
 
-		// update Image.ExifDate database fields of all images assigned to actual page
-		cwsFolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
+		// update Image.ExifDate database fields of all images assigned to actual page if image sort option is set "4:ExifDate"
+		// Todo: execute DB update on URL request instead page write to avoid timing issues when dealing with lots of big images
+		if (cwsFolderGalleryPage_Controller::getImageSortOption() == "ExifDate") {
+			cwsFolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
+		}
 	}
 }
  
