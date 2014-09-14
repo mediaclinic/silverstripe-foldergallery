@@ -1,5 +1,5 @@
 {
-    "name": "cwsoft/silverstripe-cwsoft-foldergallery",
+    "name": "cwsoft/silverstripe-foldergallery",
     "type": "silverstripe-module",
     "description": "A light weight and simple to use folder based image gallery for the CMS SilverStripe 3 enabling you to setup small to medium image galleries with ease.",
     "keywords": ["silverstripe", "gallery", "image", "imagegallery", "cwsoft"],
