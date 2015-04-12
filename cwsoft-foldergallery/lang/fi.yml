@@ -1,0 +1,22 @@
+fi:
+  _config:
+    WRONG_MODULE_FOLDER: 'Nimeä kansio "{folderName}" nimellä "{moduleName}" saadaksesi {moduleName} toimimaan.'
+
+  cwsFolderGalleryPage:
+    SINGULARNAME: 'Kansiokuvagalleria'
+    PLURALNAME: 'Kansiokuvagalleriat'
+    DESCRIPTION: 'Kansioihin perustuva kuvagalleria'
+    CHOOSE_IMAGE_FOLDER: 'Valitse kuvakansio (alakansio assets/cwsoft-foldergallery/)'
+
+  Foldergallery:
+    ALBUM: 'Albumi'
+    ALBUM_HAS_NO_IMAGES: 'Kategoriassa ei ole vielä kuvia.'
+    BACK_TO_ALBUM_OVERVIEW: 'Takaisin albuminäkymään'
+    DISPLAYED_ALBUMS: 'Kuva-albumit'
+    DISPLAYED_IMAGES: 'Kuvia'
+    NOTE: 'Huom'
+    NUMBER_OF_IMAGES: '(Kuvia: {images})'
+    NUMBER_OF_SUB_ALBUMS: '(Alakansiota: {subAlbums})'
+    START_SLIDESHOW: 'Aloita kuvaesitys'
+    PREVIOUS: 'Edellinen'
+    NEXT: 'Seuraava'
